@@ -1,500 +1,110 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" class="h-full">
 <head>
   <meta charset="UTF-8" />
   <title>Kai Hsu (徐愷 | KK) – 技術顧問・產品教練・數位遊牧與社群推動者</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Kai Hsu (徐愷 | KK) – 從實習生到技術副總與創業者，活躍於數位遊牧、生態與新創圈，專注 Web 技術、雲端架構、產品開發與社群打造，協助工程師與團隊突破卡關。">
-  <style>
-    :root {
-      --bg: #0f0f0f;
-      --fg: #f7f7f7;
-      --muted: #9a9a9a;
-      --accent: #f7f7f7;
-      --border: #2f2f2f;
-      --max-width: 960px;
-      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-mono: "SF Mono", Menlo, Monaco, monospace;
-    }
-
-    body.theme-light {
-      --bg: #ffffff;
-      --fg: #161616;
-      --muted: #5a5a5a;
-      --accent: #161616;
-      --border: #dddddd;
-    }
-
-    body.theme-light .hero-lead,
-    body.theme-light .section-body {
-      color: #202020;
-    }
-
-    body.theme-light .hero-right {
-      color: #3a3a3a;
-    }
-
-    body.theme-dark {
-      --bg: #0f0f0f;
-      --fg: #f7f7f7;
-      --muted: #9a9a9a;
-      --accent: #f7f7f7;
-      --border: #2f2f2f;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: var(--font-main);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: var(--fg);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .page {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 32px 20px 64px;
-    }
-
-    /* NAV */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 40px;
-      border-bottom: 1px solid var(--border);
-      background: var(--bg);
-      padding-bottom: 16px;
-    }
-
-    .logo {
-      font-size: 18px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    header .right-controls {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    nav {
-      display: flex;
-      gap: 16px;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    nav a {
-      opacity: 0.7;
-    }
-
-    nav a:hover {
-      opacity: 1;
-    }
-
-    .toggle-group {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .toggle-button {
-      position: relative;
-      appearance: none;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--fg);
-      border-radius: 999px;
-      width: auto;
-      height: auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-      padding: 2px 8px;
-      font-size: 13px;
-      line-height: 1.2;
-    }
-
-    .toggle-button[aria-pressed="true"] {
-      color: var(--fg);
-      border-color: var(--fg);
-    }
-
-    .toggle-button:focus-visible {
-      outline: 2px solid var(--fg);
-      outline-offset: 2px;
-    }
-
-    .toggle-button .icon {
-      font-size: 13px;
-      line-height: 1;
-    }
-
-    .toggle-button .icon-light {
-      display: none;
-    }
-
-    .toggle-button[data-theme-state="light"] .icon-light {
-      display: inline;
-    }
-
-    .toggle-button[data-theme-state="light"] .icon-dark {
-      display: none;
-    }
-
-    .toggle-button .icon-en {
-      display: none;
-    }
-
-    .toggle-button[data-lang-state="en"] .icon-en {
-      display: inline;
-    }
-
-    .toggle-button[data-lang-state="en"] .icon-zh {
-      display: none;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-
-    /* HERO */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
-      gap: 32px;
-      margin-bottom: 56px;
-    }
-
-    .hero-title {
-      font-size: 40px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .hero-subtitle {
-      font-size: 16px;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-
-    .hero-lead {
-      font-size: 15px;
-      color: #ddd;
-    }
-
-    .hero-meta {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 12px;
-    }
-
-    .hero-right {
-      border-left: 1px solid var(--border);
-      padding-left: 20px;
-      font-size: 13px;
-      color: #ccc;
-    }
-
-    .hero-right strong {
-      font-weight: 600;
-    }
-
-    .hero-tags {
-      margin-top: 16px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 4px 10px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    /* Sections */
-    section {
-      margin-bottom: 40px;
-      padding-top: 40px;
-      border-top: 1px solid var(--border);
-    }
-
-    .section-title {
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      margin-bottom: 16px;
-      color: var(--muted);
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
-      gap: 24px;
-    }
-
-    .section-body {
-      font-size: 14px;
-      color: #eee;
-    }
-
-    .section-body p + p {
-      margin-top: 8px;
-    }
-
-    .list {
-      list-style: none;
-      font-size: 14px;
-    }
-
-    .list li + li {
-      margin-top: 8px;
-    }
-
-    .list-title {
-      font-weight: 600;
-    }
-
-    .muted {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* Experience / Skills layout */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px 40px;
-      font-size: 14px;
-    }
-
-    .item-title {
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .item-sub {
-      color: var(--muted);
-      font-size: 13px;
-      margin-bottom: 4px;
-    }
-
-    /* Projects */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      font-size: 13px;
-    }
-
-    .project {
-      border: 1px solid var(--border);
-      padding: 14px 14px 12px;
-      border-radius: 8px;
-    }
-
-    .project-name {
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .project-meta {
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    /* Contact */
-    .contact-box {
-      border: 1px solid var(--border);
-      padding: 18px 16px;
-      border-radius: 10px;
-      font-size: 14px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .contact-email {
-      font-family: var(--font-mono);
-      font-size: 13px;
-    }
-
-    .contact-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 4px;
-    }
-
-    .contact-cta span {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-    }
-
-    footer {
-      margin-top: 32px;
-      font-size: 11px;
-      color: var(--muted);
-      text-align: right;
-    }
-
-    /* Responsive */
-    @media (max-width: 720px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["-apple-system", "BlinkMacSystemFont", "\"Segoe UI\"", "sans-serif"],
+            mono: ["\"SF Mono\"", "Menlo", "Monaco", "monospace"]
+          },
+          colors: {
+            "page-bg-light": "#ffffff",
+            "page-bg-dark": "#0f0f0f"
+          }
+        }
       }
-
-      header .right-controls {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        gap: 12px;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        row-gap: 8px;
-      }
-
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-right {
-        border-left: none;
-        border-top: 1px solid var(--border);
-        padding-left: 0;
-        padding-top: 16px;
-      }
-
-      section {
-        padding-top: 28px;
-      }
-
-      .two-col {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-  </style>
+    };
+  </script>
 </head>
-<body class="theme-dark">
-  <div class="page">
-    <header>
-      <div class="logo">KKSHYU</div>
-      <div class="right-controls">
-      <nav>
-          <a href="#about" data-i18n="nav.about">關於</a>
-          <a href="#experience" data-i18n="nav.experience">經歷</a>
-          <a href="#skills" data-i18n="nav.skills">技能</a>
-          <a href="#initiatives" data-i18n="nav.initiatives">重點倡議</a>
-          <a href="#ecosystem" data-i18n="nav.ecosystem">生態系</a>
-          <a href="#talks" data-i18n="nav.talks">演講與社群</a>
-          <a href="#projects" data-i18n="nav.projects">專案</a>
-          <a href="#contact" data-i18n="nav.contact">聯絡</a>
-      </nav>
-        <div class="toggle-group" role="group" aria-label="Theme toggle">
-          <button class="toggle-button" type="button" id="theme-toggle" aria-pressed="true" data-theme-state="dark">
-            <span class="icon icon-dark" aria-hidden="true">🌙</span>
-            <span class="icon icon-light" aria-hidden="true">☀️</span>
+<body class="bg-page-bg-light font-sans antialiased text-slate-900 transition-colors duration-300 dark:bg-page-bg-dark dark:text-slate-100">
+  <div class="mx-auto flex min-h-screen w-full max-w-5xl flex-col gap-12 px-5 pb-16 sm:px-6 lg:px-8">
+    <header class="sticky top-0 z-50 -mx-5 flex flex-col gap-4 border-b border-slate-200/60 bg-page-bg-light/95 px-5 py-4 backdrop-blur sm:-mx-6 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:-mx-8 lg:px-8 dark:border-white/10 dark:bg-page-bg-dark/95">
+      <div class="text-base font-semibold uppercase tracking-[0.08em]">KKSHYU</div>
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
+        <nav class="flex flex-wrap gap-x-4 gap-y-2 text-[13px] uppercase tracking-[0.12em] text-slate-500 transition-colors dark:text-slate-400">
+          <a class="hover:text-slate-900 dark:hover:text-white" href="#about" data-i18n="nav.about">關於</a>
+          <a class="hover:text-slate-900 dark:hover:text-white" href="#experience" data-i18n="nav.experience">經歷</a>
+          <a class="hover:text-slate-900 dark:hover:text-white" href="#skills" data-i18n="nav.skills">技能</a>
+          <a class="hover:text-slate-900 dark:hover:text-white" href="#initiatives" data-i18n="nav.initiatives">重點倡議</a>
+          <a class="hover:text-slate-900 dark:hover:text-white" href="#ecosystem" data-i18n="nav.ecosystem">生態系</a>
+          <a class="hover:text-slate-900 dark:hover:text-white" href="#talks" data-i18n="nav.talks">演講與社群</a>
+          <a class="hover:text-slate-900 dark:hover:text-white" href="#projects" data-i18n="nav.projects">專案</a>
+          <a class="hover:text-slate-900 dark:hover:text-white" href="#contact" data-i18n="nav.contact">聯絡</a>
+        </nav>
+        <div class="flex items-center gap-3" role="group" aria-label="Toggles">
+          <button
+            class="toggle-button inline-flex items-center gap-2 rounded-full border border-slate-300/70 bg-white/80 px-3 py-1 text-[13px] font-medium uppercase tracking-[0.12em] text-slate-700 transition hover:border-slate-400 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500 dark:border-white/20 dark:bg-white/10 dark:text-slate-200 dark:hover:border-white/40 dark:hover:text-white"
+            type="button"
+            id="theme-toggle"
+            aria-pressed="true"
+            data-theme-state="dark"
+          >
+            <span data-theme-icon="dark" aria-hidden="true">🌙</span>
+            <span data-theme-icon="light" aria-hidden="true" class="hidden">☀️</span>
             <span class="sr-only" data-i18n="theme.toggle">切換深淺主題</span>
           </button>
-        </div>
-        <div class="toggle-group" role="group" aria-label="Language toggle">
-          <button class="toggle-button" type="button" id="lang-toggle" aria-pressed="false" data-lang-state="zh">
-            <span class="icon icon-zh" aria-hidden="true">🇹🇼</span>
-            <span class="icon icon-en" aria-hidden="true">🇺🇸</span>
+          <button
+            class="toggle-button inline-flex items-center gap-2 rounded-full border border-slate-300/70 bg-white/80 px-3 py-1 text-[13px] font-medium uppercase tracking-[0.12em] text-slate-700 transition hover:border-slate-400 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500 dark:border-white/20 dark:bg-white/10 dark:text-slate-200 dark:hover:border-white/40 dark:hover:text-white"
+            type="button"
+            id="lang-toggle"
+            aria-pressed="false"
+            data-lang-state="zh"
+          >
+            <span data-lang-icon="zh" aria-hidden="true">🇹🇼</span>
+            <span data-lang-icon="en" aria-hidden="true" class="hidden">🇺🇸</span>
             <span class="sr-only" data-i18n="lang.toggle">切換中英文</span>
           </button>
         </div>
       </div>
     </header>
 
-    <main>
-      <!-- HERO -->
-      <section class="hero" aria-label="Hero">
-        <div>
-          <div class="hero-subtitle" data-i18n="hero.subtitle">技術顧問 ・ 產品教練 ・ 數位遊牧生態推動者</div>
-          <h1 class="hero-title" data-i18n="hero.title">徐愷 | KK</h1>
-          <p class="hero-lead" data-i18n="hero.lead">
+    <main class="flex flex-col gap-16">
+      <section class="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)]" aria-label="Hero">
+        <div class="space-y-5">
+          <div class="text-sm uppercase tracking-[0.22em] text-slate-500 dark:text-slate-400" data-i18n="hero.subtitle">
+            技術顧問 ・ 產品教練 ・ 數位遊牧生態推動者
+          </div>
+          <h1 class="text-4xl font-semibold uppercase tracking-[0.04em]" data-i18n="hero.title">徐愷 | KK</h1>
+          <p class="text-base leading-7 text-slate-600 dark:text-slate-200" data-i18n="hero.lead">
             從實習生、工程師到技術副總、創業者與生態推動者，<br/>
             我專注在「打造人才生態系」——
             不管是培訓、媒合、場域、系統。
           </p>
-          <p class="hero-meta" data-i18n="hero.meta">
+          <p class="text-sm leading-7 text-slate-500 dark:text-slate-400" data-i18n="hero.meta">
             現任台灣數位遊牧者協會理事長、適才科技負責人、言文字負責人、遊遊(股)公司負責人等，<br/>
             投入台灣數位遊牧、國際新創合作與技術社群的長期打造。
           </p>
         </div>
-        <div class="hero-right">
+        <div class="border-t border-slate-200 pt-6 text-sm leading-7 text-slate-600 dark:border-white/10 dark:text-slate-300 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">
           <p data-i18n="hero.focus-label"><strong>目前關注：</strong></p>
           <p data-i18n="hero.focus-body">
             工程師職涯陪跑、產品與技術團隊管理顧問，<br/>
             以及數位遊牧生態、國際新創與地方創生之間的長期連結。
           </p>
-          <div class="hero-tags">
-            <span class="tag" data-i18n="hero.tag.web">網站雲端架構</span>
-            <span class="tag" data-i18n="hero.tag.startup">新創生態</span>
-            <span class="tag" data-i18n="hero.tag.nomad">數位遊牧</span>
-            <span class="tag" data-i18n="hero.tag.community">社群經營</span>
-            <span class="tag" data-i18n="hero.tag.sbl">產品開發</span>
+          <div class="mt-4 flex flex-wrap gap-3">
+            <span class="rounded-full border border-slate-200 px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-slate-500 dark:border-white/20 dark:text-slate-300" data-i18n="hero.tag.web">網站雲端架構</span>
+            <span class="rounded-full border border-slate-200 px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-slate-500 dark:border-white/20 dark:text-slate-300" data-i18n="hero.tag.startup">新創生態</span>
+            <span class="rounded-full border border-slate-200 px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-slate-500 dark:border-white/20 dark:text-slate-300" data-i18n="hero.tag.nomad">數位遊牧</span>
+            <span class="rounded-full border border-slate-200 px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-slate-500 dark:border-white/20 dark:text-slate-300" data-i18n="hero.tag.community">社群經營</span>
+            <span class="rounded-full border border-slate-200 px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-slate-500 dark:border-white/20 dark:text-slate-300" data-i18n="hero.tag.sbl">產品開發</span>
           </div>
         </div>
       </section>
 
-      <!-- ABOUT -->
-      <section id="about">
-        <div class="two-col">
+      <section id="about" class="border-t border-slate-200 pt-10 dark:border-white/10">
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.8fr)]">
           <div>
-            <h2 class="section-title" data-i18n="about.title">關於</h2>
+            <h2 class="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400" data-i18n="about.title">關於</h2>
           </div>
-          <div class="section-body">
+          <div class="space-y-3 text-sm leading-7 text-slate-600 dark:text-slate-200">
             <p data-i18n="about.p1">
               我喜歡把知識講清楚，也喜歡透過交流讓彼此的想法被打磨得更好。
               從大學開始家教累積超過十年以上教學經驗，一路在業界擔任技術顧問，
@@ -518,41 +128,40 @@
         </div>
       </section>
 
-      <!-- EXPERIENCE -->
-      <section id="experience">
-        <h2 class="section-title" data-i18n="experience.title">經歷</h2>
-        <div class="grid-2">
-          <div>
-            <div class="item-title" data-i18n="experience.item1.title">適才科技股份有限公司</div>
-            <div class="item-sub" data-i18n="experience.item1.role">負責人</div>
-            <p class="muted" data-i18n="experience.item1.body">
+      <section id="experience" class="border-t border-slate-200 pt-10 dark:border-white/10">
+        <h2 class="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400" data-i18n="experience.title">經歷</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="space-y-1">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="experience.item1.title">適才科技股份有限公司</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="experience.item1.role">負責人</div>
+            <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="experience.item1.body">
               聚焦在人才與技術的「適配」，結合接案、顧問與教育，
               協助企業建立具彈性、跨國協作的技術團隊。
             </p>
           </div>
 
-          <div>
-            <div class="item-title" data-i18n="experience.item2.title">匠說有限公司</div>
-            <div class="item-sub" data-i18n="experience.item2.role">技術長暨共同創辦人</div>
-            <p class="muted" data-i18n="experience.item2.body">
+          <div class="space-y-1">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="experience.item2.title">匠說有限公司</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="experience.item2.role">技術長暨共同創辦人</div>
+            <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="experience.item2.body">
               帶領產品與技術團隊，從 0 到 1 打磨線上教學與內容產品，
               整合前後端與雲端架構，設計長期可運作的教學系統。
             </p>
           </div>
 
-          <div>
-            <div class="item-title" data-i18n="experience.item3.title">美商行動貝果有限公司</div>
-            <div class="item-sub" data-i18n="experience.item3.role">前技術副總</div>
-            <p class="muted" data-i18n="experience.item3.body">
+          <div class="space-y-1">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="experience.item3.title">美商行動貝果有限公司</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="experience.item3.role">前技術副總</div>
+            <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="experience.item3.body">
               從工程師到技術副總，實際經歷產品快速成長、技術債管理、
               資安與跨部門溝通，理解新創在「成長與穩定」間的拉扯。
             </p>
           </div>
 
-          <div>
-            <div class="item-title" data-i18n="experience.item4.title">新創顧問與加速器導師</div>
-            <div class="item-sub" data-i18n="experience.item4.role">技術・產品・遠端團隊顧問</div>
-            <p class="muted" data-i18n="experience.item4.body">
+          <div class="space-y-1">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="experience.item4.title">新創顧問與加速器導師</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="experience.item4.role">技術・產品・遠端團隊顧問</div>
+            <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="experience.item4.body">
               參與多個新創加速器與團隊，從架構、產品路線到團隊組成，
               協助創業者用實際可落地的方式，把想法帶到國際市場。
             </p>
@@ -560,41 +169,40 @@
         </div>
       </section>
 
-      <!-- SKILLS -->
-      <section id="skills">
-        <h2 class="section-title" data-i18n="skills.title">技能</h2>
-        <div class="grid-2">
-          <div>
-            <div class="item-title" data-i18n="skills.item1.title">雲端與系統架構</div>
-            <div class="item-sub" data-i18n="skills.item1.sub">AWS 認證解決方案架構師（Associate）</div>
-            <p class="muted" data-i18n="skills.item1.body">
+      <section id="skills" class="border-t border-slate-200 pt-10 dark:border-white/10">
+        <h2 class="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400" data-i18n="skills.title">技能</h2>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="space-y-1">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="skills.item1.title">雲端與系統架構</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="skills.item1.sub">AWS 認證解決方案架構師（Associate）</div>
+            <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="skills.item1.body">
               設計可擴展、可維運的雲端架構，從 MVP 到成長期系統的成本與可靠度平衡，
               兼顧新創速度與長期技術健康。
             </p>
           </div>
 
-          <div>
-            <div class="item-title" data-i18n="skills.item2.title">網頁開發</div>
-            <div class="item-sub" data-i18n="skills.item2.sub">React / Node.js / Python / PHP</div>
-            <p class="muted" data-i18n="skills.item2.body">
+          <div class="space-y-1">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="skills.item2.title">網頁開發</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="skills.item2.sub">React / Node.js / Python / PHP</div>
+            <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="skills.item2.body">
               熟悉前後端多種網站架構，重視開發體驗與長期維護性，
               協助團隊在技術選型、重構與模組化上做決策。
             </p>
           </div>
 
-          <div>
-            <div class="item-title" data-i18n="skills.item3.title">產品與團隊領導</div>
-            <div class="item-sub" data-i18n="skills.item3.sub">產品開發與技術團隊管理</div>
-            <p class="muted" data-i18n="skills.item3.body">
+          <div class="space-y-1">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="skills.item3.title">產品與團隊領導</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="skills.item3.sub">產品開發與技術團隊管理</div>
+            <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="skills.item3.body">
               帶領跨職能團隊，從需求釐清、優先度排序到交付與迭代，
               幫助公司把「想做的事」與「做得到的事」對齊。
             </p>
           </div>
 
-          <div>
-            <div class="item-title" data-i18n="skills.item4.title">教學、輔導與社群</div>
-            <div class="item-sub" data-i18n="skills.item4.sub">內訓講師・社群貢獻者</div>
-            <p class="muted" data-i18n="skills.item4.body">
+          <div class="space-y-1">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="skills.item4.title">教學、輔導與社群</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="skills.item4.sub">內訓講師・社群貢獻者</div>
+            <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="skills.item4.body">
               超過八年教學與分享經驗，長期參與開源與技術社群，
               擅長設計以實戰為核心的學習路徑與社群活動。
             </p>
@@ -602,41 +210,40 @@
         </div>
       </section>
 
-      <!-- INITIATIVES -->
-      <section id="initiatives">
-        <h2 class="section-title" data-i18n="initiatives.title">目前倡議</h2>
-        <div class="two-col">
-          <div class="section-body">
+      <section id="initiatives" class="border-t border-slate-200 pt-10 dark:border-white/10">
+        <h2 class="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400" data-i18n="initiatives.title">目前倡議</h2>
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.8fr)]">
+          <div class="space-y-3 text-sm leading-7 text-slate-600 dark:text-slate-200">
             <p data-i18n="initiatives.intro">
               現在的我，把時間主要放在幾件事情上：<br/>
               讓 <strong>個人</strong> 能成為更自由的專業工作者、<strong>團隊</strong> 能更健康地成長、<strong>城市與地方</strong> 能因為這些人而有新故事發生。
             </p>
           </div>
-          <ul class="list">
+          <ul class="space-y-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
             <li>
-              <div class="list-title" data-i18n="initiatives.item1.title">Nomad Taiwan & TDNA 生態推動</div>
-              <div class="muted" data-i18n="initiatives.item1.body">
+              <div class="font-semibold text-slate-800 dark:text-slate-100" data-i18n="initiatives.item1.title">Nomad Taiwan & TDNA 生態推動</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="initiatives.item1.body">
                 與國發會與地方政府合作，透過 Taiwan Digital Nomad Association（TDNA）
                 舉辦峰會、工作坊與實驗計畫，讓世界看到「台灣作為下一個數位遊牧目的地」的可能。
               </div>
             </li>
             <li>
-              <div class="list-title" data-i18n="initiatives.item2.title">亞洲城市串聯與國際新創合作</div>
-              <div class="muted" data-i18n="initiatives.item2.body">
+              <div class="font-semibold text-slate-800 dark:text-slate-100" data-i18n="initiatives.item2.title">亞洲城市串聯與國際新創合作</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="initiatives.item2.body">
                 串連日本（大阪、福岡等）、韓國、泰國、菲律賓等地的社群與城市，
                 共同規劃如 Expo 峰會、Nomad Summit、城市參訪與新創媒合，建立長期合作網絡。
               </div>
             </li>
             <li>
-              <div class="list-title" data-i18n="initiatives.item3.title">Studio-Based Learning & 遠端工作教育</div>
-              <div class="muted" data-i18n="initiatives.item3.body">
+              <div class="font-semibold text-slate-800 dark:text-slate-100" data-i18n="initiatives.item3.title">Studio-Based Learning & 遠端工作教育</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="initiatives.item3.body">
                 發展 Studio-Based Learning 模式，結合線上課程、專案制工作室與國際接案，
                 讓學員不只是學會技能，而是能以數位工作在世界各地生活。
               </div>
             </li>
             <li>
-              <div class="list-title" data-i18n="initiatives.item4.title">Nomad × 地方創生與共創計畫</div>
-              <div class="muted" data-i18n="initiatives.item4.body">
+              <div class="font-semibold text-slate-800 dark:text-slate-100" data-i18n="initiatives.item4.title">Nomad × 地方創生與共創計畫</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="initiatives.item4.body">
                 在台南、台東、花蓮等地推動 Nomad 體驗週、共居共創計畫與地方活動，
                 讓遊牧工作者與在地青年、商家、政府一起嘗試新的合作模型。
               </div>
@@ -645,41 +252,40 @@
         </div>
       </section>
 
-      <!-- ECOSYSTEM & STARTUPS -->
-      <section id="ecosystem">
-        <h2 class="section-title" data-i18n="ecosystem.title">生態系與新創</h2>
-        <div class="two-col">
-          <ul class="list">
+      <section id="ecosystem" class="border-t border-slate-200 pt-10 dark:border-white/10">
+        <h2 class="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400" data-i18n="ecosystem.title">生態系與新創</h2>
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.8fr)]">
+          <ul class="space-y-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
             <li>
-              <div class="list-title" data-i18n="ecosystem.item1.title">Digital Nomad Ecosystem</div>
-              <div class="muted" data-i18n="ecosystem.item1.body">
+              <div class="font-semibold text-slate-800 dark:text-slate-100" data-i18n="ecosystem.item1.title">Digital Nomad Ecosystem</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="ecosystem.item1.body">
                 參與設計台灣數位遊牧簽證與配套、生態網站與國際宣傳，
                 並與各國 nomad 組織合作，規劃跨城市的長期交流計畫。
               </div>
             </li>
             <li>
-              <div class="list-title" data-i18n="ecosystem.item2.title">共居・共創空間與城市節點</div>
-              <div class="muted" data-i18n="ecosystem.item2.body">
+              <div class="font-semibold text-slate-800 dark:text-slate-100" data-i18n="ecosystem.item2.title">共居・共創空間與城市節點</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="ecosystem.item2.body">
                 以咖啡廳、共創空間與共居計畫為節點，逐步建立一張「Nomad Taiwan」城市網絡，
                 讓遠端工作者與在地創業者有機會自然相遇。
               </div>
             </li>
             <li>
-              <div class="list-title" data-i18n="ecosystem.item3.title">新創與政府之間的橋樑</div>
-              <div class="muted" data-i18n="ecosystem.item3.body">
+              <div class="font-semibold text-slate-800 dark:text-slate-100" data-i18n="ecosystem.item3.title">新創與政府之間的橋樑</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="ecosystem.item3.body">
                 協助政府單位理解新創與數位遊牧生態，將公共政策語言轉譯成創業者聽得懂、
                 願意參與的合作機會，也把現場的聲音帶回決策現場。
               </div>
             </li>
             <li>
-              <div class="list-title" data-i18n="ecosystem.item4.title">技術社群與公民科技</div>
-              <div class="muted" data-i18n="ecosystem.item4.body">
+              <div class="font-semibold text-slate-800 dark:text-slate-100" data-i18n="ecosystem.item4.title">技術社群與公民科技</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="ecosystem.item4.body">
                 長期參與 Python、Web 與 civic tech 社群，協辦與支持開源活動，
                 相信技術可以是一種公共基礎建設，也是一種社群的語言。
               </div>
             </li>
           </ul>
-          <div class="section-body">
+          <div class="space-y-3 text-sm leading-7 text-slate-600 dark:text-slate-200">
             <p data-i18n="ecosystem.p1">
               對我來說，「生態系」不是口號，而是一群願意長期合作的人與空間：
               開發者、創業者、城市工作者、公務員、遊牧工作者和學生，
@@ -694,43 +300,42 @@
         </div>
       </section>
 
-      <!-- TALKS & COMMUNITY -->
-      <section id="talks">
-        <h2 class="section-title" data-i18n="talks.title">演講與社群</h2>
-        <div class="two-col">
-          <ul class="list">
+      <section id="talks" class="border-t border-slate-200 pt-10 dark:border-white/10">
+        <h2 class="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400" data-i18n="talks.title">演講與社群</h2>
+        <div class="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.8fr)]">
+          <ul class="space-y-4 text-sm leading-7 text-slate-600 dark:text-slate-300">
             <li>
-              <div class="list-title" data-i18n="talks.item1.title">研討會與技術分享</div>
-              <div class="muted" data-i18n="talks.item1.body">
+              <div class="font-semibold text-slate-800 dark:text-slate-100" data-i18n="talks.item1.title">研討會與技術分享</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="talks.item1.body">
                 F2E 與 RGBA：前端開發心法與實戰案例<br/>
                 Modern Web：React 多租戶架構與大型前端架構<br/>
                 PyCon JP / PL / TW：從手相辨識到可擴展機器學習系統、面試系統與開發流程設計。<br/>
               </div>
             </li>
             <li>
-              <div class="list-title" data-i18n="talks.item2.title">企業內訓與內部分享</div>
-              <div class="muted" data-i18n="talks.item2.body">
+              <div class="font-semibold text-slate-800 dark:text-slate-100" data-i18n="talks.item2.title">企業內訓與內部分享</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="talks.item2.body">
                 中華電信、資策會等單位內訓講師，主題涵蓋網頁技術、雲端架構、
                 DevOps、團隊開發流程與遠端協作實務。
               </div>
             </li>
             <li>
-              <div class="list-title" data-i18n="talks.item3.title">社群與生態角色</div>
-              <div class="muted" data-i18n="talks.item3.body">
+              <div class="font-semibold text-slate-800 dark:text-slate-100" data-i18n="talks.item3.title">社群與生態角色</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="talks.item3.body">
                 參與與協助多個技術社群與數位遊牧社群，<br/>
                 從活動設計、議程規劃到國際講者串聯，
                 讓社群不只是一場場活動，而是持續運轉的網絡。
               </div>
             </li>
             <li>
-              <div class="list-title" data-i18n="talks.item4.title">黑客松與獎項</div>
-              <div class="muted" data-i18n="talks.item4.body">
+              <div class="font-semibold text-slate-800 dark:text-slate-100" data-i18n="talks.item4.title">黑客松與獎項</div>
+              <div class="text-sm text-slate-500 dark:text-slate-400" data-i18n="talks.item4.body">
                 Microsoft GCR Startup Hackfest 第⼀名、Salesforce 百萬美金 Hackathon 全球第六名等，
                 多次在 NTU / Alibaba 等黑客松獲獎，習慣用短時間把想法推到可以展示的程度。
               </div>
             </li>
           </ul>
-          <div class="section-body">
+          <div class="space-y-3 text-sm leading-7 text-slate-600 dark:text-slate-200">
             <p data-i18n="talks.p1">
               我相信好的分享不是「單向輸出」，而是一起把問題與場景講清楚，
               然後找到下一步可以嘗試的小實驗。這樣的精神，也放在我參與的每一場社群與生態活動中。
@@ -744,73 +349,70 @@
         </div>
       </section>
 
-      <!-- PROJECTS -->
-      <section id="projects">
-        <h2 class="section-title" data-i18n="projects.title">精選專案</h2>
-        <div class="projects">
-          <div class="project">
-            <div class="project-name" data-i18n="projects.item1.title">食安區塊鏈追蹤系統（Food Chain）</div>
-            <div class="project-meta" data-i18n="projects.item1.meta">區塊鏈・網頁・Python</div>
-            <p data-i18n="projects.item1.body">
+      <section id="projects" class="border-t border-slate-200 pt-10 dark:border-white/10">
+        <h2 class="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400" data-i18n="projects.title">精選專案</h2>
+        <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div class="rounded-lg border border-slate-200/70 p-4 transition hover:border-slate-400 dark:border-white/10 dark:hover:border-white/30">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="projects.item1.title">食安區塊鏈追蹤系統（Food Chain）</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="projects.item1.meta">區塊鏈・網頁・Python</div>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="projects.item1.body">
               以區塊鏈技術追蹤食品供應鏈，確保資訊不可竄改，增加消費者對食安的信任。
             </p>
           </div>
-          <div class="project">
-            <div class="project-name" data-i18n="projects.item2.title">手相辨識系統（Palm Read）</div>
-            <div class="project-meta" data-i18n="projects.item2.meta">機器學習・電腦視覺</div>
-            <p data-i18n="projects.item2.body">
+          <div class="rounded-lg border border-slate-200/70 p-4 transition hover:border-slate-400 dark:border-white/10 dark:hover:border-white/30">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="projects.item2.title">手相辨識系統（Palm Read）</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="projects.item2.meta">機器學習・電腦視覺</div>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="projects.item2.body">
               結合電腦視覺與機器學習，從手掌紋路進行特徵分析，探索人機互動的新可能。
             </p>
           </div>
-          <div class="project">
-            <div class="project-name" data-i18n="projects.item3.title">線上面試系統（Interview System）</div>
-            <div class="project-meta" data-i18n="projects.item3.meta">Docker・Python・DevOps</div>
-            <p data-i18n="projects.item3.body">
+          <div class="rounded-lg border border-slate-200/70 p-4 transition hover:border-slate-400 dark:border-white/10 dark:hover:border-white/30">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="projects.item3.title">線上面試系統（Interview System）</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="projects.item3.meta">Docker・Python・DevOps</div>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="projects.item3.body">
               自動化候選人程式測試與環境配置，讓大量技術面試可以在可控又公平的環境中進行。
             </p>
           </div>
-          <div class="project">
-            <div class="project-name" data-i18n="projects.item4.title">自動化機器學習系統（AutoML System）</div>
-            <div class="project-meta" data-i18n="projects.item4.meta">AWS・Azure・Python / Scala</div>
-            <p data-i18n="projects.item4.body">
+          <div class="rounded-lg border border-slate-200/70 p-4 transition hover:border-slate-400 dark:border-white/10 dark:hover:border-white/30">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="projects.item4.title">自動化機器學習系統（AutoML System）</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="projects.item4.meta">AWS・Azure・Python / Scala</div>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="projects.item4.body">
               建立從資料處理、模型訓練到部署的一條龍流程，降低團隊採用機器學習的門檻。
             </p>
           </div>
-          <div class="project">
-            <div class="project-name" data-i18n="projects.item5.title">交通違規檢舉系統（My Waiting）</div>
-            <div class="project-meta" data-i18n="projects.item5.meta">Node.js・網頁應用</div>
-            <p data-i18n="projects.item5.body">
+          <div class="rounded-lg border border-slate-200/70 p-4 transition hover:border-slate-400 dark:border-white/10 dark:hover:border-white/30">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="projects.item5.title">交通違規檢舉系統（My Waiting）</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="projects.item5.meta">Node.js・網頁應用</div>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="projects.item5.body">
               以雲端服務與前端介面整合，優化民眾檢舉與資料處理流程。
             </p>
           </div>
-          <div class="project">
-            <div class="project-name" data-i18n="projects.item6.title">自動音樂產生器（Music Generator）</div>
-            <div class="project-meta" data-i18n="projects.item6.meta">演算法・C</div>
-            <p data-i18n="projects.item6.body">
+          <div class="rounded-lg border border-slate-200/70 p-4 transition hover:border-slate-400 dark:border-white/10 dark:hover:border-white/30">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="projects.item6.title">自動音樂產生器（Music Generator）</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="projects.item6.meta">演算法・C</div>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="projects.item6.body">
               以演算法自動生成旋律，實驗「人類偏好」與機器生成內容之間的平衡。
             </p>
           </div>
-
-          <!-- Ecosystem / Nomad Projects -->
-          <div class="project">
-            <div class="project-name" data-i18n="projects.item7.title">Nomad Taiwan & 城市節點計畫</div>
-            <div class="project-meta" data-i18n="projects.item7.meta">生態・政策・社群設計</div>
-            <p data-i18n="projects.item7.body">
+          <div class="rounded-lg border border-slate-200/70 p-4 transition hover:border-slate-400 dark:border-white/10 dark:hover:border-white/30">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="projects.item7.title">Nomad Taiwan & 城市節點計畫</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="projects.item7.meta">生態・政策・社群設計</div>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="projects.item7.body">
               與政府與地方夥伴合作，打造台灣數位遊牧城市網絡，
               串連共居空間、工作空間與在地社群，設計長住與實驗計畫。
             </p>
           </div>
-          <div class="project">
-            <div class="project-name" data-i18n="projects.item8.title">Nomad Explore & Co-living Programs</div>
-            <div class="project-meta" data-i18n="projects.item8.meta">方案設計・地方創生</div>
-            <p data-i18n="projects.item8.body">
+          <div class="rounded-lg border border-slate-200/70 p-4 transition hover:border-slate-400 dark:border-white/10 dark:hover:border-white/30">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="projects.item8.title">Nomad Explore & Co-living Programs</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="projects.item8.meta">方案設計・地方創生</div>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="projects.item8.body">
               在台南、台東、花蓮等地策劃共居共創活動，讓遠端工作者與在地青年、店家、政府一起實作地方創生。
             </p>
           </div>
-          <div class="project">
-            <div class="project-name" data-i18n="projects.item9.title">跨國 Nomad & Startup Summit</div>
-            <div class="project-meta" data-i18n="projects.item9.meta">峰會・跨境合作</div>
-            <p data-i18n="projects.item9.body">
+          <div class="rounded-lg border border-slate-200/70 p-4 transition hover:border-slate-400 dark:border-white/10 dark:hover:border-white/30">
+            <div class="text-sm font-semibold text-slate-800 dark:text-slate-100" data-i18n="projects.item9.title">跨國 Nomad & Startup Summit</div>
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="projects.item9.meta">峰會・跨境合作</div>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300" data-i18n="projects.item9.body">
               舉辦與協辦多場亞洲數位遊牧與新創交流活動，串聯各國城市、公協會與社群，
               共同討論未來工作與城市的可能性。
             </p>
@@ -818,31 +420,30 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
-      <section id="contact">
-        <h2 class="section-title" data-i18n="contact.title">聯絡</h2>
-        <div class="contact-box">
+      <section id="contact" class="border-t border-slate-200 pt-10 dark:border-white/10">
+        <h2 class="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400" data-i18n="contact.title">聯絡</h2>
+        <div class="space-y-4 rounded-xl border border-slate-200/70 p-6 text-sm leading-7 text-slate-600 dark:border-white/10 dark:text-slate-200">
           <p data-i18n="contact.body">
             如果你正在思考：<br/>
             如何讓技術團隊更穩定成長？如何設計工程師與創業者的學習與陪跑路徑？<br/>
             或是想把數位遊牧、新創與地方創生結合，讓城市與人才都有所獲得，歡迎來聊聊。
           </p>
-          <div>
-            <div class="item-sub" data-i18n="contact.email-label">電子郵件</div>
-            <div class="contact-email">
-              <a href="mailto:kkshyu.tw@gmail.com">kkshyu.tw@gmail.com</a>
+          <div class="space-y-2">
+            <div class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400" data-i18n="contact.email-label">電子郵件</div>
+            <div class="font-mono text-xs">
+              <a class="text-slate-700 underline-offset-4 hover:underline dark:text-slate-100" href="mailto:kkshyu.tw@gmail.com">kkshyu.tw@gmail.com</a>
             </div>
-            <div class="contact-cta">
-              <span data-i18n="contact.cta">寫信給我</span>
+            <div class="inline-flex items-center gap-2">
+              <span class="rounded-full border border-slate-200 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-slate-600 dark:border-white/20 dark:text-slate-300" data-i18n="contact.cta">寫信給我</span>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer>
+    <footer class="mt-8 text-right text-xs text-slate-500 dark:text-slate-400">
       <span data-i18n="footer.copyright">
-      © <span id="year"></span> Kai Hsu (KK)。
+        © <span id="year"></span> Kai Hsu (KK)。
       </span>
     </footer>
   </div>
@@ -850,6 +451,7 @@
   <script>
     const THEME_STORAGE_KEY = "kkshyu-theme";
     const LANG_STORAGE_KEY = "kkshyu-lang";
+    const root = document.documentElement;
 
     const translations = {
       zh: {
@@ -1128,14 +730,35 @@
 
       let userChoseTheme = Boolean(localStorage.getItem(THEME_STORAGE_KEY));
 
+      const updateThemeUI = (theme) => {
+        if (!themeToggleButton) return;
+        const isDark = theme === "dark";
+        themeToggleButton.dataset.themeState = theme;
+        themeToggleButton.setAttribute("aria-pressed", String(isDark));
+        themeToggleButton
+          .querySelectorAll("[data-theme-icon]")
+          .forEach((icon) => {
+            icon.classList.toggle("hidden", icon.dataset.themeIcon !== theme);
+          });
+      };
+
+      const updateLanguageUI = (lang) => {
+        if (!langToggleButton) return;
+        const isEnglish = lang === "en";
+        langToggleButton.dataset.langState = lang;
+        langToggleButton.setAttribute("aria-pressed", String(isEnglish));
+        langToggleButton
+          .querySelectorAll("[data-lang-icon]")
+          .forEach((icon) => {
+            icon.classList.toggle("hidden", icon.dataset.langIcon !== lang);
+          });
+      };
+
       const setTheme = (theme, persist = true) => {
         const normalized = theme === "light" ? "light" : "dark";
-        document.body.classList.remove("theme-dark", "theme-light");
-        document.body.classList.add(`theme-${normalized}`);
-        if (themeToggleButton) {
-          themeToggleButton.dataset.themeState = normalized;
-          themeToggleButton.setAttribute("aria-pressed", String(normalized === "dark"));
-        }
+        root.classList.toggle("dark", normalized === "dark");
+        document.body.dataset.theme = normalized;
+        updateThemeUI(normalized);
         if (persist) {
           localStorage.setItem(THEME_STORAGE_KEY, normalized);
         }
@@ -1143,11 +766,9 @@
 
       const setLanguage = (lang, persist = true) => {
         const normalized = lang === "en" ? "en" : "zh";
+        document.body.dataset.lang = normalized;
         applyTranslations(normalized);
-        if (langToggleButton) {
-          langToggleButton.dataset.langState = normalized;
-          langToggleButton.setAttribute("aria-pressed", String(normalized === "en"));
-        }
+        updateLanguageUI(normalized);
         if (persist) {
           localStorage.setItem(LANG_STORAGE_KEY, normalized);
         }
