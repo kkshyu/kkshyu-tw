@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kai Hsu (徐愷 | KK) – 技術顧問・產品教練・數位遊牧與社群推動者</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kai Hsu (徐愷 | KK) – 從實習生到技術副總與創業者，活躍於數位遊牧、生態與新創圈，專注 Web 技術、雲端架構、產品開發與社群打造，協助工程師與團隊突破卡關。">
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --fg: #f7f7f7;
+      --muted: #9a9a9a;
+      --accent: #f7f7f7;
+      --border: #2f2f2f;
+      --max-width: 960px;
+      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: "SF Mono", Menlo, Monaco, monospace;
+    }
+
+    body.theme-light {
+      --bg: #ffffff;
+      --fg: #161616;
+      --muted: #5a5a5a;
+      --accent: #161616;
+      --border: #dddddd;
+    }
+
+    body.theme-light .hero-lead,
+    body.theme-light .section-body {
+      color: #202020;
+    }
+
+    body.theme-light .hero-right {
+      color: #3a3a3a;
+    }
+
+    body.theme-dark {
+      --bg: #0f0f0f;
+      --fg: #f7f7f7;
+      --muted: #9a9a9a;
+      --accent: #f7f7f7;
+      --border: #2f2f2f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    /* NAV */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+
+    .logo {
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    header .right-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    nav {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    nav a {
+      opacity: 0.7;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .toggle-group {
+      display: inline-flex;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .toggle-button {
+      appearance: none;
+      border: none;
+      background: transparent;
+      color: var(--fg);
+      padding: 6px 12px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .toggle-button[aria-pressed="true"] {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    .toggle-button:focus-visible {
+      outline: 2px solid var(--fg);
+      outline-offset: 2px;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+      gap: 32px;
+      margin-bottom: 56px;
+    }
+
+    .hero-title {
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .hero-lead {
+      font-size: 15px;
+      color: #ddd;
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    .hero-right {
+      border-left: 1px solid var(--border);
+      padding-left: 20px;
+      font-size: 13px;
+      color: #ccc;
+    }
+
+    .hero-right strong {
+      font-weight: 600;
+    }
+
+    .hero-tags {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 40px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 16px;
+      color: var(--muted);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+      gap: 24px;
+    }
+
+    .section-body {
+      font-size: 14px;
+      color: #eee;
+    }
+
+    .section-body p + p {
+      margin-top: 8px;
+    }
+
+    .list {
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .list li + li {
+      margin-top: 8px;
+    }
+
+    .list-title {
+      font-weight: 600;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Experience / Skills layout */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px 40px;
+      font-size: 14px;
+    }
+
+    .item-title {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .item-sub {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      font-size: 13px;
+    }
+
+    .project {
+      border: 1px solid var(--border);
+      padding: 14px 14px 12px;
+      border-radius: 8px;
+    }
+
+    .project-name {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .project-meta {
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    /* Contact */
+    .contact-box {
+      border: 1px solid var(--border);
+      padding: 18px 16px;
+      border-radius: 10px;
+      font-size: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-email {
+      font-family: var(--font-mono);
+      font-size: 13px;
+    }
+
+    .contact-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .contact-cta span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+
+    footer {
+      margin-top: 32px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      header .right-controls {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        row-gap: 8px;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding-left: 0;
+        padding-top: 16px;
+      }
+
+      section {
+        padding-top: 28px;
+      }
+
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
+</head>
+<body class="theme-dark">
+  <div class="page">
+    <header>
+      <div class="logo">KAI HSU / KK</div>
+      <div class="right-controls">
+      <nav>
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#experience" data-i18n="nav.experience">Experience</a>
+          <a href="#skills" data-i18n="nav.skills">Skills</a>
+          <a href="#initiatives" data-i18n="nav.initiatives">Initiatives</a>
+          <a href="#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a>
+          <a href="#talks" data-i18n="nav.talks">Talks</a>
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+        <div class="toggle-group" role="group" aria-label="Theme toggle">
+          <button class="toggle-button" type="button" id="theme-dark" data-theme-value="dark" aria-pressed="true" data-i18n="theme.dark">深色</button>
+          <button class="toggle-button" type="button" id="theme-light" data-theme-value="light" aria-pressed="false" data-i18n="theme.light">淺色</button>
+        </div>
+        <div class="toggle-group" role="group" aria-label="Language toggle">
+          <button class="toggle-button" type="button" id="lang-zh" data-lang-value="zh" aria-pressed="true" data-i18n="lang.zh">中文</button>
+          <button class="toggle-button" type="button" id="lang-en" data-lang-value="en" aria-pressed="false" data-i18n="lang.en">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" aria-label="Hero">
+        <div>
+          <div class="hero-subtitle" data-i18n="hero.subtitle">Technical Advisor ・ Product Coach ・ Nomad Ecosystem Builder</div>
+          <h1 class="hero-title" data-i18n="hero.title">Kai Hsu<br/>徐愷 | KK</h1>
+          <p class="hero-lead" data-i18n="hero.lead">
+            從實習生、工程師到技術副總、創業者與生態推動者，<br/>
+            我專注在「把卡住的人與城市解到會走」——
+            不管是程式、產品、組織，還是城市與地方的下一步。
+          </p>
+          <p class="hero-meta" data-i18n="hero.meta">
+            現任適才科技負責人、匠說技術長暨共同創辦人，<br/>
+            投入台灣數位遊牧生態、國際新創合作與技術社群的長期打造。
+          </p>
+        </div>
+        <div class="hero-right">
+          <p data-i18n="hero.focus-label"><strong>目前關注：</strong></p>
+          <p data-i18n="hero.focus-body">
+            Web / 雲端技術教學、工程師職涯陪跑、產品與技術團隊管理顧問，<br/>
+            以及「Nomad Taiwan」生態、TDNA、國際新創與地方創生之間的長期連結。
+          </p>
+          <div class="hero-tags">
+            <span class="tag" data-i18n="hero.tag.web">Web & Cloud Architecture</span>
+            <span class="tag" data-i18n="hero.tag.startup">Startup Ecosystem</span>
+            <span class="tag" data-i18n="hero.tag.nomad">Digital Nomad</span>
+            <span class="tag" data-i18n="hero.tag.community">Community Building</span>
+            <span class="tag" data-i18n="hero.tag.sbl">Studio-Based Learning</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="two-col">
+          <div>
+            <h2 class="section-title" data-i18n="about.title">About</h2>
+          </div>
+          <div class="section-body">
+            <p data-i18n="about.p1">
+              我喜歡把知識講清楚，也喜歡透過交流讓彼此的想法被打磨得更好。
+              從大學開始家教累積超過八年以上教學經驗，一路在業界擔任技術顧問，
+              對於「被技術卡住的人」特別能共感與拆解問題。
+            </p>
+            <p data-i18n="about.p2">
+              大三暑假進入職場實習，之後從工程師一路走到技術副總與創業者。
+              親身走過徬徨的新人、焦慮的工程師、兩面為難的管理職，
+              也因此能在技術、產品與組織、人之間，找到更務實的平衡點。
+            </p>
+            <p data-i18n="about.p3">
+              近年我把重心放在三個圈：<br/>
+              <strong>數位遊牧與城市生態、亞洲新創合作、技術與公民社群。</strong><br/>
+              在台灣與日本、韓國、東南亞之間跑來跑去，把 nomad、地方創生、開發者社群、
+              以及公共部門串成一張長期合作的網絡。
+            </p>
+            <p data-i18n="about.p4">
+              如果你對「如何讓人才自由流動，同時讓城市與地方受益」有興趣，
+              我很樂意一起討論、設計實驗。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience">
+        <h2 class="section-title" data-i18n="experience.title">Experience</h2>
+        <div class="grid-2">
+          <div>
+            <div class="item-title" data-i18n="experience.item1.title">適才科技股份有限公司</div>
+            <div class="item-sub" data-i18n="experience.item1.role">負責人</div>
+            <p class="muted" data-i18n="experience.item1.body">
+              聚焦在人才與技術的「適配」，結合接案、顧問與教育，
+              協助企業建立具彈性、跨國協作的技術團隊。
+            </p>
+          </div>
+
+          <div>
+            <div class="item-title" data-i18n="experience.item2.title">匠說有限公司</div>
+            <div class="item-sub" data-i18n="experience.item2.role">技術長暨共同創辦人</div>
+            <p class="muted" data-i18n="experience.item2.body">
+              帶領產品與技術團隊，從 0 到 1 打磨線上教學與內容產品，
+              整合前後端與雲端架構，設計長期可運作的教學系統。
+            </p>
+          </div>
+
+          <div>
+            <div class="item-title" data-i18n="experience.item3.title">美商行動貝果有限公司</div>
+            <div class="item-sub" data-i18n="experience.item3.role">前技術副總</div>
+            <p class="muted" data-i18n="experience.item3.body">
+              從工程師到技術副總，實際經歷產品快速成長、技術債管理、
+              資安與跨部門溝通，理解新創在「成長與穩定」間的拉扯。
+            </p>
+          </div>
+
+          <div>
+            <div class="item-title" data-i18n="experience.item4.title">新創顧問與加速器導師</div>
+            <div class="item-sub" data-i18n="experience.item4.role">技術・產品・遠端團隊顧問</div>
+            <p class="muted" data-i18n="experience.item4.body">
+              參與多個新創加速器與團隊，從架構、產品路線到團隊組成，
+              協助創業者用實際可落地的方式，把想法帶到國際市場。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills">
+        <h2 class="section-title" data-i18n="skills.title">Skills</h2>
+        <div class="grid-2">
+          <div>
+            <div class="item-title" data-i18n="skills.item1.title">Cloud & System Architecture</div>
+            <div class="item-sub" data-i18n="skills.item1.sub">AWS Certified Solutions Architect – Associate</div>
+            <p class="muted" data-i18n="skills.item1.body">
+              設計可擴展、可維運的雲端架構，從 MVP 到成長期系統的成本與可靠度平衡，
+              兼顧新創速度與長期技術健康。
+            </p>
+          </div>
+
+          <div>
+            <div class="item-title" data-i18n="skills.item2.title">Web Development</div>
+            <div class="item-sub" data-i18n="skills.item2.sub">React / Node.js / Python / PHP</div>
+            <p class="muted" data-i18n="skills.item2.body">
+              熟悉前後端多種網站架構，重視開發體驗與長期維護性，
+              協助團隊在技術選型、重構與模組化上做決策。
+            </p>
+          </div>
+
+          <div>
+            <div class="item-title" data-i18n="skills.item3.title">Product & Team Leadership</div>
+            <div class="item-sub" data-i18n="skills.item3.sub">產品開發與技術團隊管理</div>
+            <p class="muted" data-i18n="skills.item3.body">
+              帶領跨職能團隊，從需求釐清、優先度排序到交付與迭代，
+              幫助公司把「想做的事」與「做得到的事」對齊。
+            </p>
+          </div>
+
+          <div>
+            <div class="item-title" data-i18n="skills.item4.title">Teaching, Mentoring & Community</div>
+            <div class="item-sub" data-i18n="skills.item4.sub">內訓講師・社群貢獻者</div>
+            <p class="muted" data-i18n="skills.item4.body">
+              超過八年教學與分享經驗，長期參與開源與技術社群，
+              擅長設計以實戰為核心的學習路徑與社群活動。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- INITIATIVES -->
+      <section id="initiatives">
+        <h2 class="section-title" data-i18n="initiatives.title">Current Initiatives</h2>
+        <div class="two-col">
+          <div class="section-body">
+            <p data-i18n="initiatives.intro">
+              現在的我，把時間主要放在幾件事情上：<br/>
+              讓 <strong>個人</strong> 能成為更自由的專業工作者、<strong>團隊</strong> 能更健康地成長、<strong>城市與地方</strong> 能因為這些人而有新故事發生。
+            </p>
+          </div>
+          <ul class="list">
+            <li>
+              <div class="list-title" data-i18n="initiatives.item1.title">Nomad Taiwan & TDNA 生態推動</div>
+              <div class="muted" data-i18n="initiatives.item1.body">
+                與國發會與地方政府合作，透過 Taiwan Digital Nomad Association（TDNA）
+                舉辦峰會、工作坊與實驗計畫，讓世界看到「台灣作為下一個數位遊牧目的地」的可能。
+              </div>
+            </li>
+            <li>
+              <div class="list-title" data-i18n="initiatives.item2.title">亞洲城市串聯與國際新創合作</div>
+              <div class="muted" data-i18n="initiatives.item2.body">
+                串連日本（大阪、福岡等）、韓國、泰國、菲律賓等地的社群與城市，
+                共同規劃如 Expo 峰會、Nomad Summit、城市參訪與新創媒合，建立長期合作網絡。
+              </div>
+            </li>
+            <li>
+              <div class="list-title" data-i18n="initiatives.item3.title">Studio-Based Learning & 遠端工作教育</div>
+              <div class="muted" data-i18n="initiatives.item3.body">
+                發展 Studio-Based Learning 模式，結合線上課程、專案制工作室與國際接案，
+                讓學員不只是學會技能，而是能以數位工作在世界各地生活。
+              </div>
+            </li>
+            <li>
+              <div class="list-title" data-i18n="initiatives.item4.title">Nomad × 地方創生與共創計畫</div>
+              <div class="muted" data-i18n="initiatives.item4.body">
+                在台南、台東、花蓮等地推動 Nomad 體驗週、共居共創計畫與地方活動，
+                讓 nomads 與在地青年、商家、政府一起嘗試新的合作模型。
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ECOSYSTEM & STARTUPS -->
+      <section id="ecosystem">
+        <h2 class="section-title" data-i18n="ecosystem.title">Ecosystem & Startups</h2>
+        <div class="two-col">
+          <ul class="list">
+            <li>
+              <div class="list-title" data-i18n="ecosystem.item1.title">Digital Nomad Ecosystem</div>
+              <div class="muted" data-i18n="ecosystem.item1.body">
+                參與設計台灣數位遊牧簽證與配套、生態網站與國際宣傳，
+                並與各國 nomad 組織合作，規劃跨城市的長期交流計畫。
+              </div>
+            </li>
+            <li>
+              <div class="list-title" data-i18n="ecosystem.item2.title">共居・共創空間與城市節點</div>
+              <div class="muted" data-i18n="ecosystem.item2.body">
+                以咖啡廳、共創空間與共居計畫為節點，逐步建立一張「Nomad Taiwan」城市網絡，
+                讓遠端工作者與在地創業者有機會自然相遇。
+              </div>
+            </li>
+            <li>
+              <div class="list-title" data-i18n="ecosystem.item3.title">新創與政府之間的橋樑</div>
+              <div class="muted" data-i18n="ecosystem.item3.body">
+                協助政府單位理解新創與數位遊牧生態，將公共政策語言轉譯成創業者聽得懂、
+                願意參與的合作機會，也把現場的聲音帶回決策現場。
+              </div>
+            </li>
+            <li>
+              <div class="list-title" data-i18n="ecosystem.item4.title">技術社群與公民科技</div>
+              <div class="muted" data-i18n="ecosystem.item4.body">
+                長期參與 Python、Web 與 civic tech 社群，協辦與支持開源活動，
+                相信技術可以是一種公共基礎建設，也是一種社群的語言。
+              </div>
+            </li>
+          </ul>
+          <div class="section-body">
+            <p data-i18n="ecosystem.p1">
+              對我來說，「生態系」不是口號，而是一群願意長期合作的人與空間：
+              開發者、創業者、城市工作者、公務員、nomads 和學生，
+              大家帶著不同角色與限制走進來，但共同期待的是——
+              <strong>如何讓個人的自由，變成城市與地方的養分。</strong>
+            </p>
+            <p data-i18n="ecosystem.p2">
+              如果你正在規劃類似的生態、加速器、國際交流或地方實驗，
+              歡迎找我一起拆解與 co-design。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TALKS & COMMUNITY -->
+      <section id="talks">
+        <h2 class="section-title" data-i18n="talks.title">Talks & Community</h2>
+        <div class="two-col">
+          <ul class="list">
+            <li>
+              <div class="list-title" data-i18n="talks.item1.title">Conference & Tech Talks</div>
+              <div class="muted" data-i18n="talks.item1.body">
+                F2E &amp; RGBA：前端開發心法與實戰案例<br/>
+                Modern Web：Multi-tenant in React 與大型前端架構<br/>
+                PyCon JP / PL / TW：從手相辨識到可擴展機器學習系統、面試系統與開發流程設計。<br/>
+              </div>
+            </li>
+            <li>
+              <div class="list-title" data-i18n="talks.item2.title">Corporate Training & In-house Sharing</div>
+              <div class="muted" data-i18n="talks.item2.body">
+                中華電信、資策會等單位內訓講師，主題涵蓋 Web 技術、雲端架構、
+                DevOps、團隊開發流程與遠端協作實務。
+              </div>
+            </li>
+            <li>
+              <div class="list-title" data-i18n="talks.item3.title">Community & Ecosystem Roles</div>
+              <div class="muted" data-i18n="talks.item3.body">
+                參與與協助多個技術社群與數位遊牧社群，<br/>
+                從活動設計、議程規劃到國際講者串聯，
+                讓社群不只是一場場活動，而是持續運轉的網絡。
+              </div>
+            </li>
+            <li>
+              <div class="list-title" data-i18n="talks.item4.title">Hackathon & Awards</div>
+              <div class="muted" data-i18n="talks.item4.body">
+                Microsoft GCR Startup Hackfest 第⼀名、Salesforce $1M Hackathon 全球第六名等，
+                多次在 NTU / Alibaba 等 Hackathon 獲獎，習慣用短時間把想法推到可以 demo 的程度。
+              </div>
+            </li>
+          </ul>
+          <div class="section-body">
+            <p data-i18n="talks.p1">
+              我相信好的分享不是「單向輸出」，而是一起把問題與場景講清楚，
+              然後找到下一步可以嘗試的小實驗。這樣的精神，也放在我參與的每一場社群與生態活動中。
+            </p>
+            <p data-i18n="talks.p2">
+              無論是內訓、公開演講、panel 對談，或是關起門來的 strategy workshop，
+              如果你希望讓團隊、社群或城市的對話更貼近實務，
+              很歡迎一起設計一場適合你們現況的交流。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <h2 class="section-title" data-i18n="projects.title">Selected Projects</h2>
+        <div class="projects">
+          <div class="project">
+            <div class="project-name" data-i18n="projects.item1.title">食安區塊鏈追蹤系統（Food Chain）</div>
+            <div class="project-meta" data-i18n="projects.item1.meta">Blockchain・Web・Python</div>
+            <p data-i18n="projects.item1.body">
+              以區塊鏈技術追蹤食品供應鏈，確保資訊不可竄改，增加消費者對食安的信任。
+            </p>
+          </div>
+          <div class="project">
+            <div class="project-name" data-i18n="projects.item2.title">手相辨識系統（Palm Read）</div>
+            <div class="project-meta" data-i18n="projects.item2.meta">Machine Learning・Computer Vision</div>
+            <p data-i18n="projects.item2.body">
+              結合電腦視覺與機器學習，從手掌紋路進行特徵分析，探索人機互動的新可能。
+            </p>
+          </div>
+          <div class="project">
+            <div class="project-name" data-i18n="projects.item3.title">線上面試系統（Interview System）</div>
+            <div class="project-meta" data-i18n="projects.item3.meta">Docker・Python・DevOps</div>
+            <p data-i18n="projects.item3.body">
+              自動化候選人程式測試與環境配置，讓大量技術面試可以在可控又公平的環境中進行。
+            </p>
+          </div>
+          <div class="project">
+            <div class="project-name" data-i18n="projects.item4.title">自動化機器學習系統（AutoML System）</div>
+            <div class="project-meta" data-i18n="projects.item4.meta">AWS・Azure・Python / Scala</div>
+            <p data-i18n="projects.item4.body">
+              建立從資料處理、模型訓練到部署的一條龍流程，降低團隊採用 ML 的門檻。
+            </p>
+          </div>
+          <div class="project">
+            <div class="project-name" data-i18n="projects.item5.title">交通違規檢舉系統（My Waiting）</div>
+            <div class="project-meta" data-i18n="projects.item5.meta">Node.js・Web App</div>
+            <p data-i18n="projects.item5.body">
+              以雲端服務與前端介面整合，優化民眾檢舉與資料處理流程。
+            </p>
+          </div>
+          <div class="project">
+            <div class="project-name" data-i18n="projects.item6.title">自動音樂產生器（Music Generator）</div>
+            <div class="project-meta" data-i18n="projects.item6.meta">Algorithm・C</div>
+            <p data-i18n="projects.item6.body">
+              以演算法自動生成旋律，實驗「人類偏好」與機器生成內容之間的平衡。
+            </p>
+          </div>
+
+          <!-- Ecosystem / Nomad Projects -->
+          <div class="project">
+            <div class="project-name" data-i18n="projects.item7.title">Nomad Taiwan & 城市節點計畫</div>
+            <div class="project-meta" data-i18n="projects.item7.meta">Ecosystem・Policy・Community Design</div>
+            <p data-i18n="projects.item7.body">
+              與政府與地方夥伴合作，打造台灣數位遊牧城市網絡，
+              串連共居空間、工作空間與在地社群，設計長住與實驗計畫。
+            </p>
+          </div>
+          <div class="project">
+            <div class="project-name" data-i18n="projects.item8.title">Nomad Explore & Co-living Programs</div>
+            <div class="project-meta" data-i18n="projects.item8.meta">Program Design・Local Revitalization</div>
+            <p data-i18n="projects.item8.body">
+              在台南、台東、花蓮等地策劃共居共創活動，讓遠端工作者與在地青年、店家、政府一起實作地方創生。
+            </p>
+          </div>
+          <div class="project">
+            <div class="project-name" data-i18n="projects.item9.title">跨國 Nomad & Startup Summit</div>
+            <div class="project-meta" data-i18n="projects.item9.meta">Summit・Cross-border Collaboration</div>
+            <p data-i18n="projects.item9.body">
+              舉辦與協辦多場亞洲數位遊牧與新創交流活動，串聯各國城市、公協會與社群，
+              共同討論未來工作與城市的可能性。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+        <div class="contact-box">
+          <p data-i18n="contact.body">
+            如果你正在思考：<br/>
+            如何讓技術團隊更穩定成長？如何設計工程師與創業者的學習與陪跑路徑？<br/>
+            或是想把數位遊牧、新創與地方創生結合，讓城市與人才都有所獲得，歡迎來聊聊。
+          </p>
+          <div>
+            <div class="item-sub" data-i18n="contact.email-label">Email</div>
+            <div class="contact-email">
+              <a href="mailto:kkshyu.tw@gmail.com">kkshyu.tw@gmail.com</a>
+            </div>
+            <div class="contact-cta">
+              <span data-i18n="contact.cta">Say Hello</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span data-i18n="footer.copyright">
+      © <span id="year"></span> Kai Hsu (KK). All rights reserved.
+      </span>
+    </footer>
+  </div>
+
+  <script>
+    const THEME_STORAGE_KEY = "kkshyu-theme";
+    const LANG_STORAGE_KEY = "kkshyu-lang";
+
+    const translations = {
+      zh: {
+        "nav.about": "關於",
+        "nav.experience": "經歷",
+        "nav.skills": "技能",
+        "nav.initiatives": "重點倡議",
+        "nav.ecosystem": "生態系",
+        "nav.talks": "演講與社群",
+        "nav.projects": "專案",
+        "nav.contact": "聯絡",
+        "theme.dark": "深色",
+        "theme.light": "淺色",
+        "lang.zh": "中文",
+        "lang.en": "EN",
+        "hero.subtitle": "技術顧問 ・ 產品教練 ・ 數位遊牧生態推動者",
+        "hero.title": "Kai Hsu<br/>徐愷 | KK",
+        "hero.lead": "從實習生、工程師到技術副總、創業者與生態推動者，<br/>我專注在「把卡住的人與城市解到會走」——<br/>不管是程式、產品、組織，還是城市與地方的下一步。",
+        "hero.meta": "現任適才科技負責人、匠說技術長暨共同創辦人，<br/>投入台灣數位遊牧生態、國際新創合作與技術社群的長期打造。",
+        "hero.focus-label": "<strong>目前關注：</strong>",
+        "hero.focus-body": "Web / 雲端技術教學、工程師職涯陪跑、產品與技術團隊管理顧問，<br/>以及「Nomad Taiwan」生態、TDNA、國際新創與地方創生之間的長期連結。",
+        "hero.tag.web": "Web & Cloud Architecture",
+        "hero.tag.startup": "Startup Ecosystem",
+        "hero.tag.nomad": "Digital Nomad",
+        "hero.tag.community": "Community Building",
+        "hero.tag.sbl": "Studio-Based Learning",
+        "about.title": "關於",
+        "about.p1": "我喜歡把知識講清楚，也喜歡透過交流讓彼此的想法被打磨得更好。從大學開始家教累積超過八年以上教學經驗，一路在業界擔任技術顧問，對於「被技術卡住的人」特別能共感與拆解問題。",
+        "about.p2": "大三暑假進入職場實習，之後從工程師一路走到技術副總與創業者。親身走過徬徨的新人、焦慮的工程師、兩面為難的管理職，也因此能在技術、產品與組織、人之間，找到更務實的平衡點。",
+        "about.p3": "近年我把重心放在三個圈：<br/><strong>數位遊牧與城市生態、亞洲新創合作、技術與公民社群。</strong><br/>在台灣與日本、韓國、東南亞之間跑來跑去，把 nomad、地方創生、開發者社群，以及公共部門串成一張長期合作的網絡。",
+        "about.p4": "如果你對「如何讓人才自由流動，同時讓城市與地方受益」有興趣，我很樂意一起討論、設計實驗。",
+        "experience.title": "經歷",
+        "experience.item1.title": "適才科技股份有限公司",
+        "experience.item1.role": "負責人",
+        "experience.item1.body": "聚焦在人才與技術的「適配」，結合接案、顧問與教育，協助企業建立具彈性、跨國協作的技術團隊。",
+        "experience.item2.title": "匠說有限公司",
+        "experience.item2.role": "技術長暨共同創辦人",
+        "experience.item2.body": "帶領產品與技術團隊，從 0 到 1 打磨線上教學與內容產品，整合前後端與雲端架構，設計長期可運作的教學系統。",
+        "experience.item3.title": "美商行動貝果有限公司",
+        "experience.item3.role": "前技術副總",
+        "experience.item3.body": "從工程師到技術副總，實際經歷產品快速成長、技術債管理、資安與跨部門溝通，理解新創在「成長與穩定」間的拉扯。",
+        "experience.item4.title": "新創顧問與加速器導師",
+        "experience.item4.role": "技術・產品・遠端團隊顧問",
+        "experience.item4.body": "參與多個新創加速器與團隊，從架構、產品路線到團隊組成，協助創業者用實際可落地的方式，把想法帶到國際市場。",
+        "skills.title": "技能",
+        "skills.item1.title": "Cloud & System Architecture",
+        "skills.item1.sub": "AWS Certified Solutions Architect – Associate",
+        "skills.item1.body": "設計可擴展、可維運的雲端架構，從 MVP 到成長期系統的成本與可靠度平衡，兼顧新創速度與長期技術健康。",
+        "skills.item2.title": "Web Development",
+        "skills.item2.sub": "React / Node.js / Python / PHP",
+        "skills.item2.body": "熟悉前後端多種網站架構，重視開發體驗與長期維護性，協助團隊在技術選型、重構與模組化上做決策。",
+        "skills.item3.title": "Product & Team Leadership",
+        "skills.item3.sub": "產品開發與技術團隊管理",
+        "skills.item3.body": "帶領跨職能團隊，從需求釐清、優先度排序到交付與迭代，幫助公司把「想做的事」與「做得到的事」對齊。",
+        "skills.item4.title": "Teaching, Mentoring & Community",
+        "skills.item4.sub": "內訓講師・社群貢獻者",
+        "skills.item4.body": "超過八年教學與分享經驗，長期參與開源與技術社群，擅長設計以實戰為核心的學習路徑與社群活動。",
+        "initiatives.title": "Current Initiatives",
+        "initiatives.intro": "現在的我，把時間主要放在幾件事情上：<br/>讓 <strong>個人</strong> 能成為更自由的專業工作者、<strong>團隊</strong> 能更健康地成長、<strong>城市與地方</strong> 能因為這些人而有新故事發生。",
+        "initiatives.item1.title": "Nomad Taiwan & TDNA 生態推動",
+        "initiatives.item1.body": "與國發會與地方政府合作，透過 Taiwan Digital Nomad Association（TDNA）舉辦峰會、工作坊與實驗計畫，讓世界看到「台灣作為下一個數位遊牧目的地」的可能。",
+        "initiatives.item2.title": "亞洲城市串聯與國際新創合作",
+        "initiatives.item2.body": "串連日本（大阪、福岡等）、韓國、泰國、菲律賓等地的社群與城市，共同規劃如 Expo 峰會、Nomad Summit、城市參訪與新創媒合，建立長期合作網絡。",
+        "initiatives.item3.title": "Studio-Based Learning & 遠端工作教育",
+        "initiatives.item3.body": "發展 Studio-Based Learning 模式，結合線上課程、專案制工作室與國際接案，讓學員不只是學會技能，而是能以數位工作在世界各地生活。",
+        "initiatives.item4.title": "Nomad × 地方創生與共創計畫",
+        "initiatives.item4.body": "在台南、台東、花蓮等地推動 Nomad 體驗週、共居共創計畫與地方活動，讓 nomads 與在地青年、商家、政府一起嘗試新的合作模型。",
+        "ecosystem.title": "Ecosystem & Startups",
+        "ecosystem.item1.title": "Digital Nomad Ecosystem",
+        "ecosystem.item1.body": "參與設計台灣數位遊牧簽證與配套、生態網站與國際宣傳，並與各國 nomad 組織合作，規劃跨城市的長期交流計畫。",
+        "ecosystem.item2.title": "共居・共創空間與城市節點",
+        "ecosystem.item2.body": "以咖啡廳、共創空間與共居計畫為節點，逐步建立一張「Nomad Taiwan」城市網絡，讓遠端工作者與在地創業者有機會自然相遇。",
+        "ecosystem.item3.title": "新創與政府之間的橋樑",
+        "ecosystem.item3.body": "協助政府單位理解新創與數位遊牧生態，將公共政策語言轉譯成創業者聽得懂、願意參與的合作機會，也把現場的聲音帶回決策現場。",
+        "ecosystem.item4.title": "技術社群與公民科技",
+        "ecosystem.item4.body": "長期參與 Python、Web 與 civic tech 社群，協辦與支持開源活動，相信技術可以是一種公共基礎建設，也是一種社群的語言。",
+        "ecosystem.p1": "對我來說，「生態系」不是口號，而是一群願意長期合作的人與空間：開發者、創業者、城市工作者、公務員、nomads 和學生，大家帶著不同角色與限制走進來，但共同期待的是——<strong>如何讓個人的自由，變成城市與地方的養分。</strong>",
+        "ecosystem.p2": "如果你正在規劃類似的生態、加速器、國際交流或地方實驗，歡迎找我一起拆解與 co-design。",
+        "talks.title": "Talks & Community",
+        "talks.item1.title": "Conference & Tech Talks",
+        "talks.item1.body": "F2E &amp; RGBA：前端開發心法與實戰案例<br/>Modern Web：Multi-tenant in React 與大型前端架構<br/>PyCon JP / PL / TW：從手相辨識到可擴展機器學習系統、面試系統與開發流程設計。<br/>",
+        "talks.item2.title": "Corporate Training & In-house Sharing",
+        "talks.item2.body": "中華電信、資策會等單位內訓講師，主題涵蓋 Web 技術、雲端架構、DevOps、團隊開發流程與遠端協作實務。",
+        "talks.item3.title": "Community & Ecosystem Roles",
+        "talks.item3.body": "參與與協助多個技術社群與數位遊牧社群，<br/>從活動設計、議程規劃到國際講者串聯，讓社群不只是一場場活動，而是持續運轉的網絡。",
+        "talks.item4.title": "Hackathon & Awards",
+        "talks.item4.body": "Microsoft GCR Startup Hackfest 第⼀名、Salesforce $1M Hackathon 全球第六名等，多次在 NTU / Alibaba 等 Hackathon 獲獎，習慣用短時間把想法推到可以 demo 的程度。",
+        "talks.p1": "我相信好的分享不是「單向輸出」，而是一起把問題與場景講清楚，然後找到下一步可以嘗試的小實驗。這樣的精神，也放在我參與的每一場社群與生態活動中。",
+        "talks.p2": "無論是內訓、公開演講、panel 對談，或是關起門來的 strategy workshop，如果你希望讓團隊、社群或城市的對話更貼近實務，很歡迎一起設計一場適合你們現況的交流。",
+        "projects.title": "Selected Projects",
+        "projects.item1.title": "食安區塊鏈追蹤系統（Food Chain）",
+        "projects.item1.meta": "Blockchain・Web・Python",
+        "projects.item1.body": "以區塊鏈技術追蹤食品供應鏈，確保資訊不可竄改，增加消費者對食安的信任。",
+        "projects.item2.title": "手相辨識系統（Palm Read）",
+        "projects.item2.meta": "Machine Learning・Computer Vision",
+        "projects.item2.body": "結合電腦視覺與機器學習，從手掌紋路進行特徵分析，探索人機互動的新可能。",
+        "projects.item3.title": "線上面試系統（Interview System）",
+        "projects.item3.meta": "Docker・Python・DevOps",
+        "projects.item3.body": "自動化候選人程式測試與環境配置，讓大量技術面試可以在可控又公平的環境中進行。",
+        "projects.item4.title": "自動化機器學習系統（AutoML System）",
+        "projects.item4.meta": "AWS・Azure・Python / Scala",
+        "projects.item4.body": "建立從資料處理、模型訓練到部署的一條龍流程，降低團隊採用 ML 的門檻。",
+        "projects.item5.title": "交通違規檢舉系統（My Waiting）",
+        "projects.item5.meta": "Node.js・Web App",
+        "projects.item5.body": "以雲端服務與前端介面整合，優化民眾檢舉與資料處理流程。",
+        "projects.item6.title": "自動音樂產生器（Music Generator）",
+        "projects.item6.meta": "Algorithm・C",
+        "projects.item6.body": "以演算法自動生成旋律，實驗「人類偏好」與機器生成內容之間的平衡。",
+        "projects.item7.title": "Nomad Taiwan & 城市節點計畫",
+        "projects.item7.meta": "Ecosystem・Policy・Community Design",
+        "projects.item7.body": "與政府與地方夥伴合作，打造台灣數位遊牧城市網絡，串連共居空間、工作空間與在地社群，設計長住與實驗計畫。",
+        "projects.item8.title": "Nomad Explore & Co-living Programs",
+        "projects.item8.meta": "Program Design・Local Revitalization",
+        "projects.item8.body": "在台南、台東、花蓮等地策劃共居共創活動，讓遠端工作者與在地青年、店家、政府一起實作地方創生。",
+        "projects.item9.title": "跨國 Nomad & Startup Summit",
+        "projects.item9.meta": "Summit・Cross-border Collaboration",
+        "projects.item9.body": "舉辦與協辦多場亞洲數位遊牧與新創交流活動，串聯各國城市、公協會與社群，共同討論未來工作與城市的可能性。",
+        "contact.title": "Contact",
+        "contact.body": "如果你正在思考：<br/>如何讓技術團隊更穩定成長？如何設計工程師與創業者的學習與陪跑路徑？<br/>或是想把數位遊牧、新創與地方創生結合，讓城市與人才都有所獲得，歡迎來聊聊。",
+        "contact.email-label": "Email",
+        "contact.cta": "Say Hello",
+        "footer.copyright": "© <span id=\"year\"></span> Kai Hsu (KK). All rights reserved."
+      },
+      en: {
+        "nav.about": "About",
+        "nav.experience": "Experience",
+        "nav.skills": "Skills",
+        "nav.initiatives": "Initiatives",
+        "nav.ecosystem": "Ecosystem",
+        "nav.talks": "Talks",
+        "nav.projects": "Projects",
+        "nav.contact": "Contact",
+        "theme.dark": "Dark",
+        "theme.light": "Light",
+        "lang.zh": "中文",
+        "lang.en": "EN",
+        "hero.subtitle": "Technical Advisor ・ Product Coach ・ Nomad Ecosystem Builder",
+        "hero.title": "Kai Hsu<br/>徐愷 | KK",
+        "hero.lead": "From intern and engineer to VP of Engineering, founder, and ecosystem catalyst,<br/>I focus on helping people and cities get unstuck—<br/>whether it's code, products, teams, or the next step for a place.",
+        "hero.meta": "Currently leading Adaptivity Tech and serving as CTO & co-founder of Craft Dojo,<br/>building Taiwan's digital nomad scene, international startup collaborations, and developer communities for the long run.",
+        "hero.focus-label": "<strong>Current Focus:</strong>",
+        "hero.focus-body": "Teaching web and cloud technologies, coaching engineers' careers, advising product and engineering teams,<br/>and weaving long-term bridges across the Nomad Taiwan ecosystem, TDNA, global startups, and local revitalization.",
+        "hero.tag.web": "Web & Cloud Architecture",
+        "hero.tag.startup": "Startup Ecosystem",
+        "hero.tag.nomad": "Digital Nomad",
+        "hero.tag.community": "Community Building",
+        "hero.tag.sbl": "Studio-Based Learning",
+        "about.title": "About",
+        "about.p1": "I enjoy explaining ideas clearly and polishing thinking through conversations. Since university I've spent 8+ years teaching and working as a technical advisor, empathizing with people who feel stuck by technology.",
+        "about.p2": "I started my career as an intern in college and grew from engineer to VP of Engineering and founder. Experiencing the uncertainty of juniors, the anxiety of engineers, and the tensions of managers helps me balance technology, product, teams, and people.",
+        "about.p3": "In recent years I focus on three circles:<br/><strong>Digital nomads & urban ecosystems, Asia startup collaboration, and tech & civic communities.</strong><br/>I shuttle between Taiwan, Japan, Korea, and Southeast Asia to connect nomads, local revitalization, developer communities, and the public sector into a long-term network.",
+        "about.p4": "If you're interested in how talent can move freely while cities and regions also benefit, I'd love to design experiments together.",
+        "experience.title": "Experience",
+        "experience.item1.title": "Adaptivity Tech Co., Ltd.",
+        "experience.item1.role": "Founder & Managing Director",
+        "experience.item1.body": "Focus on aligning talent and technology by blending consulting, contracting, and education to help companies build flexible, cross-border engineering teams.",
+        "experience.item2.title": "Craft Dojo Ltd.",
+        "experience.item2.role": "CTO & Co-founder",
+        "experience.item2.body": "Led product and engineering from 0 to 1 for online learning products, integrating front-end, back-end, and cloud architecture into a durable teaching platform.",
+        "experience.item3.title": "Mobagel Inc.",
+        "experience.item3.role": "Former VP of Engineering",
+        "experience.item3.body": "Scaled from engineer to VP, navigating hyper-growth, technical debt, security, and cross-team collaboration to balance startup speed with stability.",
+        "experience.item4.title": "Startup Advisor & Accelerator Mentor",
+        "experience.item4.role": "Tech・Product・Remote Team Advisor",
+        "experience.item4.body": "Support founders across accelerators on architecture, product roadmaps, and team composition, turning ideas into global-ready execution.",
+        "skills.title": "Skills",
+        "skills.item1.title": "Cloud & System Architecture",
+        "skills.item1.sub": "AWS Certified Solutions Architect – Associate",
+        "skills.item1.body": "Design scalable, operable cloud architectures that balance cost and reliability from MVP to growth while keeping startups healthy long-term.",
+        "skills.item2.title": "Web Development",
+        "skills.item2.sub": "React / Node.js / Python / PHP",
+        "skills.item2.body": "Full-stack web experience with an emphasis on developer experience and maintainability, guiding teams on tech choices, refactoring, and modularization.",
+        "skills.item3.title": "Product & Team Leadership",
+        "skills.item3.sub": "Product Development & Engineering Management",
+        "skills.item3.body": "Lead cross-functional teams through discovery, prioritization, delivery, and iteration to align what we want to build with what we can deliver.",
+        "skills.item4.title": "Teaching, Mentoring & Community",
+        "skills.item4.sub": "In-house Trainer・Community Contributor",
+        "skills.item4.body": "Over eight years of teaching and community work, designing experiential learning paths and programs centered on real-world practice.",
+        "initiatives.title": "Current Initiatives",
+        "initiatives.intro": "I currently dedicate my time to a few themes:<br/>helping <strong>individuals</strong> become freer professionals, <strong>teams</strong> grow healthily, and <strong>cities & regions</strong> create new stories with them.",
+        "initiatives.item1.title": "Nomad Taiwan & TDNA Ecosystem",
+        "initiatives.item1.body": "Partner with national and local governments via the Taiwan Digital Nomad Association (TDNA) to host summits, workshops, and experiments that position Taiwan as the next digital nomad destination.",
+        "initiatives.item2.title": "Asia City Alliances & Startup Collaboration",
+        "initiatives.item2.body": "Connect communities across Japan (Osaka, Fukuoka, etc.), Korea, Thailand, and the Philippines to co-create expos, nomad summits, city visits, and startup matchmaking for long-term cooperation.",
+        "initiatives.item3.title": "Studio-Based Learning & Remote Work Education",
+        "initiatives.item3.body": "Develop studio-based learning that combines online courses, project studios, and international contracting so learners gain skills and a portable digital career.",
+        "initiatives.item4.title": "Nomad × Local Revitalization Co-creation",
+        "initiatives.item4.body": "Run nomad immersion weeks, co-living, and co-creation programs in Tainan, Taitung, Hualien, and beyond so nomads, local youth, businesses, and government can prototype new collaborations.",
+        "ecosystem.title": "Ecosystem & Startups",
+        "ecosystem.item1.title": "Digital Nomad Ecosystem",
+        "ecosystem.item1.body": "Co-design Taiwan's digital nomad visa, ecosystem site, and international outreach while partnering with global nomad organizations on cross-city programs.",
+        "ecosystem.item2.title": "Co-living, Co-creating Spaces & City Nodes",
+        "ecosystem.item2.body": "Use cafés, co-creation hubs, and co-living programs as nodes to weave a Nomad Taiwan city network where remote workers and local founders meet naturally.",
+        "ecosystem.item3.title": "Bridge Between Startups & Government",
+        "ecosystem.item3.body": "Translate public policy into opportunities startups understand and join, while channeling on-the-ground voices back into policymaking.",
+        "ecosystem.item4.title": "Tech Communities & Civic Tech",
+        "ecosystem.item4.body": "Long-time contributor to Python, web, and civic tech communities, supporting open-source events and treating technology as civic infrastructure and community language.",
+        "ecosystem.p1": "To me, an “ecosystem” isn't a slogan but people and places committed to long-term collaboration: developers, founders, civic workers, public servants, nomads, and students. We arrive with different roles and constraints yet share one question—<strong>how can personal freedom become nourishment for cities and regions?</strong>",
+        "ecosystem.p2": "If you're crafting ecosystems, accelerators, international exchanges, or local experiments, let's break things down and co-design together.",
+        "talks.title": "Talks & Community",
+        "talks.item1.title": "Conference & Tech Talks",
+        "talks.item1.body": "F2E &amp; RGBA: Front-end mindsets and real-world cases<br/>Modern Web: Multi-tenant React and large-scale front-end architecture<br/>PyCon JP / PL / TW: From palm recognition to scalable ML systems, interview workflows, and developer process design.<br/>",
+        "talks.item2.title": "Corporate Training & In-house Sharing",
+        "talks.item2.body": "Instructor for Chunghwa Telecom, III, and more on web technologies, cloud architecture, DevOps, team processes, and remote collaboration.",
+        "talks.item3.title": "Community & Ecosystem Roles",
+        "talks.item3.body": "Support numerous tech and nomad communities—from program design and agenda planning to international speaker outreach—to keep networks thriving beyond single events.",
+        "talks.item4.title": "Hackathons & Awards",
+        "talks.item4.body": "Winner of Microsoft GCR Startup Hackfest and sixth place in the Salesforce $1M Hackathon, with multiple awards at NTU, Alibaba, and more—used to shipping demos fast.",
+        "talks.p1": "I believe good sharing isn't a one-way broadcast but clarifying problems together and finding the next experiment. That's the spirit behind every community and ecosystem event I join.",
+        "talks.p2": "Whether it's in-house training, public talks, panels, or closed strategy workshops, if you want conversations that stay grounded in practice, let's design a session for your context.",
+        "projects.title": "Selected Projects",
+        "projects.item1.title": "Food Chain – Food Safety Blockchain Tracking",
+        "projects.item1.meta": "Blockchain・Web・Python",
+        "projects.item1.body": "Track food supply chains with blockchain to guarantee data integrity and strengthen consumer trust in food safety.",
+        "projects.item2.title": "Palm Read – Palm Recognition System",
+        "projects.item2.meta": "Machine Learning・Computer Vision",
+        "projects.item2.body": "Combine computer vision and machine learning to analyze palm patterns and explore new human-computer interaction.",
+        "projects.item3.title": "Interview System – Online Technical Assessments",
+        "projects.item3.meta": "Docker・Python・DevOps",
+        "projects.item3.body": "Automate coding tests and environment setup so high-volume technical interviews run in a controlled, fair environment.",
+        "projects.item4.title": "AutoML System – Automated Machine Learning Platform",
+        "projects.item4.meta": "AWS・Azure・Python / Scala",
+        "projects.item4.body": "Build an end-to-end pipeline from data prep and training to deployment, lowering the barrier for teams adopting machine learning.",
+        "projects.item5.title": "My Waiting – Traffic Violation Reporting",
+        "projects.item5.meta": "Node.js・Web App",
+        "projects.item5.body": "Integrate cloud services and front-end workflows to streamline citizen reporting and data processing.",
+        "projects.item6.title": "Music Generator – Algorithmic Composition",
+        "projects.item6.meta": "Algorithm・C",
+        "projects.item6.body": "Use algorithms to generate melodies and explore the balance between human preference and machine-created content.",
+        "projects.item7.title": "Nomad Taiwan – City Node Program",
+        "projects.item7.meta": "Ecosystem・Policy・Community Design",
+        "projects.item7.body": "Collaborate with governments and local partners to build a Taiwan digital nomad network linking co-living, workspaces, and communities with long-stay programs.",
+        "projects.item8.title": "Nomad Explore & Co-living Programs",
+        "projects.item8.meta": "Program Design・Local Revitalization",
+        "projects.item8.body": "Design co-living and co-creation experiences in Tainan, Taitung, and Hualien so remote workers collaborate with local youth, businesses, and government.",
+        "projects.item9.title": "Cross-border Nomad & Startup Summit",
+        "projects.item9.meta": "Summit・Cross-border Collaboration",
+        "projects.item9.body": "Host and co-host Asia-wide nomad and startup gatherings that connect cities, associations, and communities to imagine the future of work.",
+        "contact.title": "Contact",
+        "contact.body": "Thinking about how to grow your engineering team sustainably?<br/>Designing learning journeys for engineers or founders?<br/>Or exploring how digital nomads, startups, and local revitalization can reinforce each other? Let's talk.",
+        "contact.email-label": "Email",
+        "contact.cta": "Say Hello",
+        "footer.copyright": "© <span id=\"year\"></span> Kai Hsu (KK). All rights reserved."
+      }
+    };
+
+    const applyYear = () => {
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    };
+
+    const applyTranslations = (lang) => {
+      const dict = translations[lang] || translations.zh;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.dataset.i18n;
+        if (!key) return;
+        const value = dict[key];
+        if (value !== undefined) {
+          el.innerHTML = value;
+        }
+      });
+      document.documentElement.lang = lang === "en" ? "en" : "zh-Hant";
+      applyYear();
+    };
+
+    const updatePressedState = (buttons, datasetKey, activeValue) => {
+      buttons.forEach((button) => {
+        const value = button.dataset[datasetKey];
+        const isActive = value === activeValue;
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+      const themeButtons = Array.from(document.querySelectorAll("[data-theme-value]"));
+      const langButtons = Array.from(document.querySelectorAll("[data-lang-value]"));
+
+      let userChoseTheme = Boolean(localStorage.getItem(THEME_STORAGE_KEY));
+
+      const setTheme = (theme, persist = true) => {
+        const normalized = theme === "light" ? "light" : "dark";
+        document.body.classList.remove("theme-dark", "theme-light");
+        document.body.classList.add(`theme-${normalized}`);
+        updatePressedState(themeButtons, "themeValue", normalized);
+        if (persist) {
+          localStorage.setItem(THEME_STORAGE_KEY, normalized);
+        }
+      };
+
+      const setLanguage = (lang, persist = true) => {
+        const normalized = lang === "en" ? "en" : "zh";
+        applyTranslations(normalized);
+        updatePressedState(langButtons, "langValue", normalized);
+        if (persist) {
+          localStorage.setItem(LANG_STORAGE_KEY, normalized);
+        }
+      };
+
+      const storedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+      const initialTheme = storedTheme || (prefersDark.matches ? "dark" : "light");
+      setTheme(initialTheme, Boolean(storedTheme));
+
+      const storedLang = localStorage.getItem(LANG_STORAGE_KEY) || "zh";
+      setLanguage(storedLang, Boolean(localStorage.getItem(LANG_STORAGE_KEY)));
+
+      themeButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const value = button.dataset.themeValue;
+          userChoseTheme = true;
+          setTheme(value);
+        });
+      });
+
+      langButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const value = button.dataset.langValue;
+          setLanguage(value);
+        });
+      });
+
+      prefersDark.addEventListener("change", (event) => {
+        if (!userChoseTheme) {
+          setTheme(event.matches ? "dark" : "light", false);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
