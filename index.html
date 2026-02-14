@@ -49,6 +49,12 @@
           >
             <a
               class="hover:text-slate-900 dark:hover:text-white"
+              href="#partnership"
+              data-i18n="nav.partnership"
+              >合作方式</a
+            >
+            <a
+              class="hover:text-slate-900 dark:hover:text-white"
               href="#about"
               data-i18n="nav.about"
               >關於</a
@@ -190,6 +196,9 @@
             >
               現任台灣數位遊牧者協會理事長、適才科技負責人、言文字負責人、遊遊(股)公司負責人等，
               投入台灣數位遊牧、國際新創合作與技術社群的長期打造。<br />
+            </p>
+            <p class="text-sm font-medium text-slate-700 dark:text-slate-200" data-i18n="hero.cooperation">
+              歡迎企業、政府與新創夥伴一起合作 —— <a href="#partnership" class="underline underline-offset-2 hover:no-underline">看合作方式</a>
             </p>
           </div>
           <div
@@ -1180,6 +1189,54 @@
         </section>
 
         <section
+          id="partnership"
+          class="border-t border-slate-200 pt-10 dark:border-white/10"
+          aria-label="Partnership"
+        >
+          <div class="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.8fr)]">
+            <div>
+              <h2
+                class="text-sm uppercase tracking-[0.18em] text-slate-500 dark:text-slate-400"
+                data-i18n="partnership.title"
+              >
+                合作方式
+              </h2>
+              <p
+                class="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300"
+                data-i18n="partnership.subtitle"
+              >
+                企業、政府、新創與社群夥伴可依需求選擇以下合作形式，或來信討論客製方案。
+              </p>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-xl border border-slate-200/70 bg-slate-50/50 p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="text-sm font-semibold uppercase tracking-[0.08em] text-slate-800 dark:text-slate-100" data-i18n="partnership.card1.title">技術與產品顧問</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300" data-i18n="partnership.card1.body">架構檢視、技術選型、產品路線與團隊組成建議，協助新創與企業把想法落地、走向國際。</p>
+              </div>
+              <div class="rounded-xl border border-slate-200/70 bg-slate-50/50 p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="text-sm font-semibold uppercase tracking-[0.08em] text-slate-800 dark:text-slate-100" data-i18n="partnership.card2.title">企業內訓與工作坊</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300" data-i18n="partnership.card2.body">網頁技術、雲端架構、DevOps、遠端協作與團隊開發流程，可依團隊現況設計課程或策略工作坊。</p>
+              </div>
+              <div class="rounded-xl border border-slate-200/70 bg-slate-50/50 p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="text-sm font-semibold uppercase tracking-[0.08em] text-slate-800 dark:text-slate-100" data-i18n="partnership.card3.title">數位遊牧與新創生態</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300" data-i18n="partnership.card3.body">峰會、城市節點、共居共創、國際新創媒合與亞洲城市串聯，歡迎政府、場域與企業一起打造生態。</p>
+              </div>
+              <div class="rounded-xl border border-slate-200/70 bg-slate-50/50 p-5 dark:border-white/10 dark:bg-white/5">
+                <h3 class="text-sm font-semibold uppercase tracking-[0.08em] text-slate-800 dark:text-slate-100" data-i18n="partnership.card4.title">演講與策略對談</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300" data-i18n="partnership.card4.body">公開演講、座談、閉門策略工作坊，讓團隊、社群或城市的對話更貼近實務與下一步行動。</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-6 flex justify-end">
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 rounded-full border border-slate-300/70 bg-white/80 px-4 py-2 text-sm font-medium uppercase tracking-[0.1em] text-slate-700 transition hover:border-slate-400 hover:text-slate-900 dark:border-white/20 dark:bg-white/10 dark:text-slate-200 dark:hover:border-white/40 dark:hover:text-white"
+              data-i18n="partnership.cta"
+            >聯絡合作</a>
+          </div>
+        </section>
+
+        <section
           id="contact"
           class="border-t border-slate-200 pt-10 dark:border-white/10"
         >
@@ -1197,6 +1254,9 @@
               如何讓技術團隊更穩定成長？如何設計工程師與創業者的學習與陪跑路徑？<br />
               或是想把數位遊牧、新創與地方創生結合，讓城市與人才都有所獲得，歡迎來聊聊。
             </p>
+            <p class="text-xs uppercase tracking-[0.1em] text-slate-500 dark:text-slate-400" data-i18n="contact.enterprise-cta">
+              企業合作、顧問邀約、演講與內訓，歡迎來信討論。
+            </p>
             <div class="space-y-2">
               <div
                 class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
@@ -1212,10 +1272,11 @@
                 >
               </div>
               <div class="inline-flex items-center gap-2">
-                <span
-                  class="rounded-full border border-slate-200 px-3 py-1 text-[11px] uppercase tracking-[0.16em] text-slate-600 dark:border-white/20 dark:text-slate-300"
+                <a
+                  href="mailto:kkshyu.tw@gmail.com?subject=合作邀約"
+                  class="rounded-full border border-slate-200 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-slate-600 transition hover:border-slate-400 hover:text-slate-900 dark:border-white/20 dark:text-slate-300 dark:hover:border-white/40 dark:hover:text-white"
                   data-i18n="contact.cta"
-                  >寫信給我</span
+                  >寫信給我</a
                 >
               </div>
             </div>
@@ -1235,6 +1296,7 @@
 
       const translations = {
         zh: {
+          "nav.partnership": "合作方式",
           "nav.about": "關於",
           "nav.experience": "經歷",
           "nav.skills": "技能",
@@ -1256,6 +1318,7 @@
             "從實習生、工程師到技術副總、創業者與生態推動者，<br/>我專注在「打造人才生態系」—— 不管是培訓、媒合、場域、系統。",
           "hero.meta":
             "現任台灣數位遊牧者協會理事長、適才科技負責人、言文字負責人、遊遊（股）公司負責人等，投入台灣數位遊牧、國際新創合作與技術社群的長期打造。",
+          "hero.cooperation": "歡迎企業、政府與新創夥伴一起合作 —— <a href=\"#partnership\" class=\"underline underline-offset-2 hover:no-underline\">看合作方式</a>",
           "hero.focus-label": "<strong>目前關注：</strong>",
           "hero.focus-body":
             "工程師職涯陪跑、產品與技術團隊管理顧問，<br/>以及數位遊牧生態、國際新創與地方創生之間的長期連結。",
@@ -1264,6 +1327,17 @@
           "hero.tag.nomad": "數位遊牧",
           "hero.tag.community": "社群經營",
           "hero.tag.sbl": "產品開發",
+          "partnership.title": "合作方式",
+          "partnership.subtitle": "企業、政府、新創與社群夥伴可依需求選擇以下合作形式，或來信討論客製方案。",
+          "partnership.card1.title": "技術與產品顧問",
+          "partnership.card1.body": "架構檢視、技術選型、產品路線與團隊組成建議，協助新創與企業把想法落地、走向國際。",
+          "partnership.card2.title": "企業內訓與工作坊",
+          "partnership.card2.body": "網頁技術、雲端架構、DevOps、遠端協作與團隊開發流程，可依團隊現況設計課程或策略工作坊。",
+          "partnership.card3.title": "數位遊牧與新創生態",
+          "partnership.card3.body": "峰會、城市節點、共居共創、國際新創媒合與亞洲城市串聯，歡迎政府、場域與企業一起打造生態。",
+          "partnership.card4.title": "演講與策略對談",
+          "partnership.card4.body": "公開演講、座談、閉門策略工作坊，讓團隊、社群或城市的對話更貼近實務與下一步行動。",
+          "partnership.cta": "聯絡合作",
           "about.title": "關於",
           "about.p1":
             "我喜歡把知識講清楚，也喜歡透過交流讓彼此的想法被打磨得更好。從大學開始家教累積超過十年以上教學經驗，一路在業界擔任技術顧問，對於「被技術卡住的人」特別能共感與拆解問題。",
@@ -1453,11 +1527,13 @@
           "contact.title": "聯絡",
           "contact.body":
             "如果你正在思考：<br/>如何讓技術團隊更穩定成長？如何設計工程師與創業者的學習與陪跑路徑？<br/>或是想把數位遊牧、新創與地方創生結合，讓城市與人才都有所獲得，歡迎來聊聊。",
+          "contact.enterprise-cta": "企業合作、顧問邀約、演講與內訓，歡迎來信討論。",
           "contact.email-label": "電子郵件",
           "contact.cta": "寫信給我",
           "footer.copyright": '© <span id="year"></span> Kai Hsu (KK)。',
         },
         en: {
+          "nav.partnership": "Partnership",
           "nav.about": "About",
           "nav.experience": "Experience",
           "nav.skills": "Skills",
@@ -1479,6 +1555,7 @@
             "From intern and engineer to VP of engineering, founder, and ecosystem builder,<br/>I focus on building talent ecosystems—spanning training, matchmaking, spaces, and systems.",
           "hero.meta":
             "Currently chairing the Taiwan Digital Nomad Association and leading Urfit Tech, Emoji Cafe, and Twouring Co., investing in Taiwan's digital nomad movement, international startup collaboration, and long-term tech communities.",
+          "hero.cooperation": "Open to partnerships with enterprises, government, and startups — <a href=\"#partnership\" class=\"underline underline-offset-2 hover:no-underline\">see how we can work together</a>",
           "hero.focus-label": "<strong>Current Focus:</strong>",
           "hero.focus-body":
             "Career coaching for engineers, advising product and engineering teams,<br/>and weaving long-term links between the digital nomad ecosystem, global startups, and local revitalization.",
@@ -1487,6 +1564,17 @@
           "hero.tag.nomad": "Digital Nomad",
           "hero.tag.community": "Community Building",
           "hero.tag.sbl": "Product Development",
+          "partnership.title": "Partnership & Collaboration",
+          "partnership.subtitle": "Enterprises, government, startups, and community partners can choose from the options below or reach out to discuss custom engagement.",
+          "partnership.card1.title": "Tech & Product Advisory",
+          "partnership.card1.body": "Architecture review, tech stack decisions, product roadmap, and team design—helping startups and enterprises ship and scale internationally.",
+          "partnership.card2.title": "Corporate Training & Workshops",
+          "partnership.card2.body": "Web tech, cloud architecture, DevOps, remote collaboration, and team processes—tailored courses or strategy workshops for your team.",
+          "partnership.card3.title": "Digital Nomad & Startup Ecosystem",
+          "partnership.card3.body": "Summits, city nodes, co-living and co-creation, international startup matchmaking, and Asia city alliances—partner with government, venues, and enterprises to build the ecosystem.",
+          "partnership.card4.title": "Talks & Strategy Sessions",
+          "partnership.card4.body": "Keynotes, panels, and closed-door strategy workshops so your team, community, or city can have practical, action-oriented conversations.",
+          "partnership.cta": "Get in Touch",
           "about.title": "About",
           "about.p1":
             "I enjoy explaining ideas clearly and sharpening thinking through conversations. Since university I've spent 10+ years teaching and working as a technical advisor, empathizing with people who feel stuck by technology.",
@@ -1678,8 +1766,9 @@
           "contact.title": "Contact",
           "contact.body":
             "Thinking about how to grow your engineering team sustainably?<br/>Designing learning journeys for engineers or founders?<br/>Or exploring how digital nomads, startups, and local revitalization can reinforce each other? Let's talk.",
+          "contact.enterprise-cta": "Enterprise partnerships, advisory, talks, and training—reach out to discuss.",
           "contact.email-label": "Email",
-          "contact.cta": "Say Hello",
+          "contact.cta": "Get in Touch",
           "footer.copyright": '© <span id="year"></span> Kai Hsu (KK). All rights reserved.',
         },
       };
