@@ -141,12 +141,12 @@
               <span
                 data-lang-icon="zh"
                 aria-hidden="true"
+                class="hidden"
                 >🇹🇼</span
               >
               <span
                 data-lang-icon="en"
                 aria-hidden="true"
-                class="hidden"
                 >🇺🇸</span
               >
               <span
@@ -275,115 +275,234 @@
           >
             經歷
           </h2>
-          <div class="grid gap-6 md:grid-cols-2">
-            <div class="space-y-1">
-              <div
-                class="text-sm font-semibold text-slate-800 dark:text-slate-100"
-                data-i18n="experience.item1.title"
-              >
-                台灣數位遊牧者協會 / 2024 年至今
-              </div>
-              <div
-                class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
-                data-i18n="experience.item1.role"
-              >
-                理事長
-              </div>
-              <p
-                class="text-sm text-slate-500 dark:text-slate-400"
-                data-i18n="experience.item1.body"
-              >
-                結合政府、民間企業、社群與校園資源，打造台灣數位遊牧生態系。
-              </p>
-            </div>
-
-            <div class="space-y-1">
-              <div
-                class="text-sm font-semibold text-slate-800 dark:text-slate-100"
-                data-i18n="experience.item2.title"
-              >
-                適才科技股份有限公司 / 2020 年至今
-              </div>
-              <div
-                class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
-                data-i18n="experience.item2.role"
-              >
-                負責人
-              </div>
-              <p
-                class="text-sm text-slate-500 dark:text-slate-400"
-                data-i18n="experience.item2.body"
-              >
-                聚焦在人才與技術的「適配」，結合接案、顧問與教育，
-                協助企業建立具彈性、跨國協作的技術團隊。
-              </p>
-            </div>
-
-            <div class="space-y-1">
-              <div
-                class="text-sm font-semibold text-slate-800 dark:text-slate-100"
-                data-i18n="experience.item3.title"
-              >
-                匠說有限公司 / 2018 年至今
-              </div>
-              <div
-                class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
-                data-i18n="experience.item3.role"
-              >
-                技術長暨共同創辦人
-              </div>
-              <p
-                class="text-sm text-slate-500 dark:text-slate-400"
-                data-i18n="experience.item3.body"
-              >
-                帶領產品與技術團隊，從 0 到 1 打磨線上教學與內容產品，
-                整合前後端與雲端架構，設計長期可運作的教學系統。
-              </p>
-            </div>
-
-            <div class="space-y-1">
-              <div
-                class="text-sm font-semibold text-slate-800 dark:text-slate-100"
-                data-i18n="experience.item4.title"
-              >
-                美商行動貝果有限公司 / 2014 - 2018 年
-              </div>
-              <div
-                class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
-                data-i18n="experience.item4.role"
-              >
-                技術副總
-              </div>
-              <p
-                class="text-sm text-slate-500 dark:text-slate-400"
-                data-i18n="experience.item4.body"
-              >
-                從工程師到技術副總，實際經歷產品快速成長、技術債管理、
-                資安與跨部門溝通，理解新創在「成長與穩定」間的拉扯。
-              </p>
-            </div>
-
-            <div class="space-y-1">
-              <div
-                class="text-sm font-semibold text-slate-800 dark:text-slate-100"
-                data-i18n="experience.item5.title"
-              >
-                適所資本 / 2025 年至今
-              </div>
-              <div
-                class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
-                data-i18n="experience.item5.role"
-              >
-                技術・產品・遠端團隊顧問
-              </div>
-              <p
-                class="text-sm text-slate-500 dark:text-slate-400"
-                data-i18n="experience.item5.body"
-              >
-                參與多個新創加速器與團隊，從架構、產品路線到團隊組成，
-                協助創業者用實際可落地的方式，把想法帶到國際市場。
-              </p>
-            </div>
+          <div class="relative mt-6">
+            <!-- timeline vertical line -->
+            <div
+              class="absolute left-[7px] top-2 bottom-2 w-px bg-slate-200 dark:bg-slate-700"
+              aria-hidden="true"
+            ></div>
+            <ul class="space-y-0">
+              <!-- 1. 遊遊 2025/5 (newest) -->
+              <li class="relative flex gap-4 pb-8 last:pb-0">
+                <span
+                  class="relative z-10 mt-1.5 flex h-4 w-4 shrink-0 rounded-full border-2 border-slate-400 bg-page-bg-light dark:border-slate-500 dark:bg-page-bg-dark"
+                  aria-hidden="true"
+                ></span>
+                <div class="min-w-0 flex-1 space-y-1">
+                  <div
+                    class="text-sm font-semibold text-slate-800 dark:text-slate-100"
+                    data-i18n="experience.item8.title"
+                  >
+                    遊遊股份有限公司（Twouring）/ 2025 年 5 月至今
+                  </div>
+                  <div
+                    class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item8.role"
+                  >
+                    負責人
+                  </div>
+                  <p
+                    class="text-sm text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item8.body"
+                  >
+                    從事數位遊牧、科技與新創顧問服務，以及政府專案輔導與補助申請等。
+                  </p>
+                </div>
+              </li>
+              <!-- 2. 適所資本 2025 -->
+              <li class="relative flex gap-4 pb-8 last:pb-0">
+                <span
+                  class="relative z-10 mt-1.5 flex h-4 w-4 shrink-0 rounded-full border-2 border-slate-400 bg-page-bg-light dark:border-slate-500 dark:bg-page-bg-dark"
+                  aria-hidden="true"
+                ></span>
+                <div class="min-w-0 flex-1 space-y-1">
+                  <div
+                    class="text-sm font-semibold text-slate-800 dark:text-slate-100"
+                    data-i18n="experience.item5.title"
+                  >
+                    適所資本 / 2025 年至今
+                  </div>
+                  <div
+                    class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item5.role"
+                  >
+                    技術・產品・遠端團隊顧問
+                  </div>
+                  <p
+                    class="text-sm text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item5.body"
+                  >
+                    參與多個新創加速器與團隊，從架構、產品路線到團隊組成，
+                    協助創業者用實際可落地的方式，把想法帶到國際市場。
+                  </p>
+                </div>
+              </li>
+              <!-- 3. 國發會 Nomad Taiwan 2025/1 -->
+              <li class="relative flex gap-4 pb-8 last:pb-0">
+                <span
+                  class="relative z-10 mt-1.5 flex h-4 w-4 shrink-0 rounded-full border-2 border-slate-400 bg-page-bg-light dark:border-slate-500 dark:bg-page-bg-dark"
+                  aria-hidden="true"
+                ></span>
+                <div class="min-w-0 flex-1 space-y-1">
+                  <div
+                    class="text-sm font-semibold text-slate-800 dark:text-slate-100"
+                    data-i18n="experience.item6.title"
+                  >
+                    國發會數位遊牧辦公室（Nomad Taiwan）/ 2025 年 1 月至今
+                  </div>
+                  <div
+                    class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item6.role"
+                  >
+                    執行長
+                  </div>
+                  <p
+                    class="text-sm text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item6.body"
+                  >
+                    推動台灣數位遊牧政策、生態與國際關係。
+                  </p>
+                </div>
+              </li>
+              <!-- 4. 台灣數位遊牧者協會 2024 -->
+              <li class="relative flex gap-4 pb-8 last:pb-0">
+                <span
+                  class="relative z-10 mt-1.5 flex h-4 w-4 shrink-0 rounded-full border-2 border-slate-400 bg-page-bg-light dark:border-slate-500 dark:bg-page-bg-dark"
+                  aria-hidden="true"
+                ></span>
+                <div class="min-w-0 flex-1 space-y-1">
+                  <div
+                    class="text-sm font-semibold text-slate-800 dark:text-slate-100"
+                    data-i18n="experience.item1.title"
+                  >
+                    台灣數位遊牧者協會 / 2024 年至今
+                  </div>
+                  <div
+                    class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item1.role"
+                  >
+                    理事長
+                  </div>
+                  <p
+                    class="text-sm text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item1.body"
+                  >
+                    結合政府、民間企業、社群與校園資源，打造台灣數位遊牧生態系。
+                  </p>
+                </div>
+              </li>
+              <!-- 5. 言文字 2023/11 -->
+              <li class="relative flex gap-4 pb-8 last:pb-0">
+                <span
+                  class="relative z-10 mt-1.5 flex h-4 w-4 shrink-0 rounded-full border-2 border-slate-400 bg-page-bg-light dark:border-slate-500 dark:bg-page-bg-dark"
+                  aria-hidden="true"
+                ></span>
+                <div class="min-w-0 flex-1 space-y-1">
+                  <div
+                    class="text-sm font-semibold text-slate-800 dark:text-slate-100"
+                    data-i18n="experience.item7.title"
+                  >
+                    言文字股份有限公司（Emoji Cafe & Bar）/ 2023 年 11 月至今
+                  </div>
+                  <div
+                    class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item7.role"
+                  >
+                    負責人
+                  </div>
+                  <p
+                    class="text-sm text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item7.body"
+                  >
+                    結合數位遊牧、咖啡調酒、共享空間、科技與新創社群的複合式場域。
+                  </p>
+                </div>
+              </li>
+              <!-- 6. 適才科技 2020 -->
+              <li class="relative flex gap-4 pb-8 last:pb-0">
+                <span
+                  class="relative z-10 mt-1.5 flex h-4 w-4 shrink-0 rounded-full border-2 border-slate-400 bg-page-bg-light dark:border-slate-500 dark:bg-page-bg-dark"
+                  aria-hidden="true"
+                ></span>
+                <div class="min-w-0 flex-1 space-y-1">
+                  <div
+                    class="text-sm font-semibold text-slate-800 dark:text-slate-100"
+                    data-i18n="experience.item2.title"
+                  >
+                    適才科技股份有限公司 / 2020 年至今
+                  </div>
+                  <div
+                    class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item2.role"
+                  >
+                    負責人
+                  </div>
+                  <p
+                    class="text-sm text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item2.body"
+                  >
+                    聚焦在人才與技術的「適配」，結合接案、顧問與教育，
+                    協助企業建立具彈性、跨國協作的技術團隊。
+                  </p>
+                </div>
+              </li>
+              <!-- 7. 匠說 2018 -->
+              <li class="relative flex gap-4 pb-8 last:pb-0">
+                <span
+                  class="relative z-10 mt-1.5 flex h-4 w-4 shrink-0 rounded-full border-2 border-slate-400 bg-page-bg-light dark:border-slate-500 dark:bg-page-bg-dark"
+                  aria-hidden="true"
+                ></span>
+                <div class="min-w-0 flex-1 space-y-1">
+                  <div
+                    class="text-sm font-semibold text-slate-800 dark:text-slate-100"
+                    data-i18n="experience.item3.title"
+                  >
+                    匠說有限公司 / 2018 年至今
+                  </div>
+                  <div
+                    class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item3.role"
+                  >
+                    技術長暨共同創辦人
+                  </div>
+                  <p
+                    class="text-sm text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item3.body"
+                  >
+                    帶領產品與技術團隊，從 0 到 1 打磨線上教學與內容產品，
+                    整合前後端與雲端架構，設計長期可運作的教學系統。
+                  </p>
+                </div>
+              </li>
+              <!-- 8. 行動貝果 2014-2018 (oldest) -->
+              <li class="relative flex gap-4 pb-8 last:pb-0">
+                <span
+                  class="relative z-10 mt-1.5 flex h-4 w-4 shrink-0 rounded-full border-2 border-slate-400 bg-page-bg-light dark:border-slate-500 dark:bg-page-bg-dark"
+                  aria-hidden="true"
+                ></span>
+                <div class="min-w-0 flex-1 space-y-1">
+                  <div
+                    class="text-sm font-semibold text-slate-800 dark:text-slate-100"
+                    data-i18n="experience.item4.title"
+                  >
+                    美商行動貝果有限公司 / 2014 - 2018 年
+                  </div>
+                  <div
+                    class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item4.role"
+                  >
+                    技術副總
+                  </div>
+                  <p
+                    class="text-sm text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item4.body"
+                  >
+                    從工程師到技術副總，實際經歷產品快速成長、技術債管理、
+                    資安與跨部門溝通，理解新創在「成長與穩定」間的拉扯。
+                  </p>
+                </div>
+              </li>
+            </ul>
           </div>
         </section>
 
@@ -1174,6 +1293,18 @@
           "experience.item5.role": "技術・產品・遠端團隊顧問",
           "experience.item5.body":
             "參與多個新創加速器與團隊，從架構、產品路線到團隊組成，協助創業者用實際可落地的方式，把想法帶到國際市場。",
+          "experience.item6.title": "國發會數位遊牧辦公室（Nomad Taiwan）/ 2025 年 1 月至今",
+          "experience.item6.role": "執行長",
+          "experience.item6.body":
+            "推動台灣數位遊牧政策、生態與國際關係。",
+          "experience.item7.title": "言文字股份有限公司（Emoji Cafe & Bar）/ 2023 年 11 月至今",
+          "experience.item7.role": "負責人",
+          "experience.item7.body":
+            "結合數位遊牧、咖啡調酒、共享空間、科技與新創社群的複合式場域。",
+          "experience.item8.title": "遊遊股份有限公司（Twouring）/ 2025 年 5 月至今",
+          "experience.item8.role": "負責人",
+          "experience.item8.body":
+            "從事數位遊牧、科技與新創顧問服務，以及政府專案輔導與補助申請等。",
           "skills.title": "技能",
           "skills.item1.title": "雲端與系統架構",
           "skills.item1.sub": "AWS 認證解決方案架構師（Associate）",
@@ -1385,6 +1516,18 @@
           "experience.item5.role": "Tech, Product & Remote Team Advisor",
           "experience.item5.body":
             "Work with accelerators and founding teams on architecture, product roadmaps, and team design to turn ideas into globally ready execution.",
+          "experience.item6.title": "NDC Digital Nomad Office (Nomad Taiwan) / Jan 2025 - Present",
+          "experience.item6.role": "CEO",
+          "experience.item6.body":
+            "Drive Taiwan's digital nomad policy, ecosystem, and international relations.",
+          "experience.item7.title": "Emoji Cafe & Bar (Yan Wen Zi Co., Ltd.) / Nov 2023 - Present",
+          "experience.item7.role": "Managing Director",
+          "experience.item7.body":
+            "A hybrid space combining digital nomad culture, coffee and cocktails, shared workspace, and tech and startup community.",
+          "experience.item8.title": "Twouring Co., Ltd. / May 2025 - Present",
+          "experience.item8.role": "Managing Director",
+          "experience.item8.body":
+            "Digital nomad, tech and startup consulting; government project mentoring and grant application support.",
           "skills.title": "Skills",
           "skills.item1.title": "Cloud & System Architecture",
           "skills.item1.sub": "AWS Certified Solutions Architect – Associate",
@@ -1584,8 +1727,10 @@
           const isEnglish = lang === "en";
           langToggleButton.dataset.langState = lang;
           langToggleButton.setAttribute("aria-pressed", String(isEnglish));
+          // 顯示「可切換到的語系」icon（點擊後會切換到該語系）
+          const showIcon = lang === "en" ? "zh" : "en";
           langToggleButton.querySelectorAll("[data-lang-icon]").forEach((icon) => {
-            icon.classList.toggle("hidden", icon.dataset.langIcon !== lang);
+            icon.classList.toggle("hidden", icon.dataset.langIcon !== showIcon);
           });
         };
 
