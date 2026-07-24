@@ -33,37 +33,138 @@
       };
     </script>
     <style>
+      /* 一鍵匯出 PDF：畫面上隱藏、僅在列印時顯示的單頁 A4 濃縮簡歷 */
+      #print-resume {
+        display: none;
+        color: #0f172a;
+        font-size: 11px;
+        line-height: 1.5;
+      }
+      #print-resume .pr-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 12px;
+        border-bottom: 1.5px solid #0f172a;
+        padding-bottom: 6px;
+      }
+      #print-resume h1 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+      #print-resume .pr-subtitle {
+        margin-top: 2px;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #475569;
+      }
+      #print-resume .pr-contact {
+        text-align: right;
+        font-size: 10px;
+        color: #334155;
+        font-family: "SF Mono", Menlo, Monaco, monospace;
+      }
+      #print-resume .pr-lead {
+        margin: 7px 0 0;
+        font-size: 10.5px;
+        color: #334155;
+      }
+      #print-resume .pr-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-top: 5px;
+      }
+      #print-resume .pr-tags span {
+        border: 0.5px solid #cbd5e1;
+        border-radius: 999px;
+        padding: 1.5px 8px;
+        font-size: 9px;
+        letter-spacing: 0.05em;
+        color: #475569;
+      }
+      #print-resume h2 {
+        margin: 12px 0 5px;
+        padding-bottom: 2px;
+        border-bottom: 0.5px solid #e2e8f0;
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #64748b;
+      }
+      #print-resume .pr-exp {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      #print-resume .pr-exp li {
+        margin-bottom: 6px;
+        break-inside: avoid;
+      }
+      #print-resume .pr-exp-title {
+        font-size: 11px;
+        font-weight: 600;
+      }
+      #print-resume .pr-exp-role {
+        margin-left: 6px;
+        font-size: 9.5px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #64748b;
+      }
+      #print-resume .pr-exp p {
+        margin: 1px 0 0;
+        font-size: 10px;
+        color: #475569;
+      }
+      #print-resume .pr-skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px 16px;
+      }
+      #print-resume .pr-skills > div {
+        break-inside: avoid;
+      }
+      #print-resume .pr-skills strong {
+        font-size: 10.5px;
+      }
+      #print-resume .pr-skill-sub {
+        margin-left: 4px;
+        font-size: 9.3px;
+        color: #64748b;
+      }
+      #print-resume .pr-skills p {
+        margin: 1px 0 0;
+        font-size: 9.8px;
+        color: #475569;
+      }
+      #print-resume .pr-line {
+        margin: 0;
+        font-size: 10px;
+        color: #475569;
+      }
+      #print-resume .pr-line strong {
+        color: #334155;
+      }
       @media print {
         @page {
-          margin: 14mm 12mm;
+          size: A4;
+          margin: 9mm 11mm;
         }
         html,
         body {
           background: #ffffff !important;
           color: #0f172a !important;
         }
-        header {
-          position: static !important;
-          border-bottom: none !important;
-          backdrop-filter: none !important;
-        }
-        .print-hidden {
+        body > div {
           display: none !important;
         }
-        main {
-          gap: 2rem !important;
-        }
-        section {
-          break-inside: avoid-page;
-          padding-top: 1.5rem !important;
-        }
-        li,
-        h2,
-        h3 {
-          break-inside: avoid;
-        }
-        a {
-          text-decoration: none !important;
+        #print-resume {
+          display: block !important;
         }
       }
     </style>
@@ -1364,6 +1465,189 @@
         <span data-i18n="footer.copyright"> © <span id="year"></span> Kai Hsu (KK)。 </span>
       </footer>
     </div>
+
+    <!-- 一鍵匯出 PDF 用的單頁 A4 濃縮簡歷（僅列印時顯示） -->
+    <section
+      id="print-resume"
+      aria-hidden="true"
+    >
+      <div class="pr-head">
+        <div>
+          <h1 data-i18n="hero.title">徐愷 | KK</h1>
+          <div
+            class="pr-subtitle"
+            data-i18n="hero.subtitle"
+          >
+            技術顧問 ・ 產品教練 ・ 數位遊牧生態推動者
+          </div>
+        </div>
+        <div class="pr-contact">kkshyu.tw@gmail.com</div>
+      </div>
+      <p
+        class="pr-lead"
+        data-i18n="hero.lead"
+      ></p>
+      <div class="pr-tags">
+        <span data-i18n="hero.tag.web"></span>
+        <span data-i18n="hero.tag.startup"></span>
+        <span data-i18n="hero.tag.nomad"></span>
+        <span data-i18n="hero.tag.community"></span>
+        <span data-i18n="hero.tag.sbl"></span>
+      </div>
+
+      <h2 data-i18n="experience.title">經歷</h2>
+      <ul class="pr-exp">
+        <li>
+          <span
+            class="pr-exp-title"
+            data-i18n="experience.item8.title"
+          ></span>
+          <span
+            class="pr-exp-role"
+            data-i18n="experience.item8.role"
+          ></span>
+          <p data-i18n="experience.item8.body"></p>
+        </li>
+        <li>
+          <span
+            class="pr-exp-title"
+            data-i18n="experience.item9.title"
+          ></span>
+          <span
+            class="pr-exp-role"
+            data-i18n="experience.item9.role"
+          ></span>
+          <p data-i18n="experience.item9.body"></p>
+        </li>
+        <li>
+          <span
+            class="pr-exp-title"
+            data-i18n="experience.item5.title"
+          ></span>
+          <span
+            class="pr-exp-role"
+            data-i18n="experience.item5.role"
+          ></span>
+          <p data-i18n="experience.item5.body"></p>
+        </li>
+        <li>
+          <span
+            class="pr-exp-title"
+            data-i18n="experience.item6.title"
+          ></span>
+          <span
+            class="pr-exp-role"
+            data-i18n="experience.item6.role"
+          ></span>
+          <p data-i18n="experience.item6.body"></p>
+        </li>
+        <li>
+          <span
+            class="pr-exp-title"
+            data-i18n="experience.item1.title"
+          ></span>
+          <span
+            class="pr-exp-role"
+            data-i18n="experience.item1.role"
+          ></span>
+          <p data-i18n="experience.item1.body"></p>
+        </li>
+        <li>
+          <span
+            class="pr-exp-title"
+            data-i18n="experience.item7.title"
+          ></span>
+          <span
+            class="pr-exp-role"
+            data-i18n="experience.item7.role"
+          ></span>
+          <p data-i18n="experience.item7.body"></p>
+        </li>
+        <li>
+          <span
+            class="pr-exp-title"
+            data-i18n="experience.item2.title"
+          ></span>
+          <span
+            class="pr-exp-role"
+            data-i18n="experience.item2.role"
+          ></span>
+          <p data-i18n="experience.item2.body"></p>
+        </li>
+        <li>
+          <span
+            class="pr-exp-title"
+            data-i18n="experience.item3.title"
+          ></span>
+          <span
+            class="pr-exp-role"
+            data-i18n="experience.item3.role"
+          ></span>
+          <p data-i18n="experience.item3.body"></p>
+        </li>
+        <li>
+          <span
+            class="pr-exp-title"
+            data-i18n="experience.item4.title"
+          ></span>
+          <span
+            class="pr-exp-role"
+            data-i18n="experience.item4.role"
+          ></span>
+          <p data-i18n="experience.item4.body"></p>
+        </li>
+      </ul>
+
+      <h2 data-i18n="skills.title">技能</h2>
+      <div class="pr-skills">
+        <div>
+          <strong data-i18n="skills.item1.title"></strong>
+          <span
+            class="pr-skill-sub"
+            data-i18n="skills.item1.sub"
+          ></span>
+          <p data-i18n="skills.item1.body"></p>
+        </div>
+        <div>
+          <strong data-i18n="skills.item2.title"></strong>
+          <span
+            class="pr-skill-sub"
+            data-i18n="skills.item2.sub"
+          ></span>
+          <p data-i18n="skills.item2.body"></p>
+        </div>
+        <div>
+          <strong data-i18n="skills.item3.title"></strong>
+          <span
+            class="pr-skill-sub"
+            data-i18n="skills.item3.sub"
+          ></span>
+          <p data-i18n="skills.item3.body"></p>
+        </div>
+        <div>
+          <strong data-i18n="skills.item4.title"></strong>
+          <span
+            class="pr-skill-sub"
+            data-i18n="skills.item4.sub"
+          ></span>
+          <p data-i18n="skills.item4.body"></p>
+        </div>
+      </div>
+
+      <h2 data-i18n="expertise.title">開發專長</h2>
+      <div class="pr-tags">
+        <span data-i18n="expertise.backend.title"></span>
+        <span data-i18n="expertise.frontend.title"></span>
+        <span data-i18n="expertise.devops.title"></span>
+        <span data-i18n="expertise.dataai.title"></span>
+      </div>
+
+      <h2 data-i18n="talks.item4.title">黑客松與獎項</h2>
+      <p
+        class="pr-line"
+        data-i18n="talks.item4.body"
+      ></p>
+    </section>
 
     <script>
       const THEME_STORAGE_KEY = "kkshyu-theme";
