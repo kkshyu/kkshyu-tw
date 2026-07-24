@@ -32,6 +32,41 @@
         },
       };
     </script>
+    <style>
+      @media print {
+        @page {
+          margin: 14mm 12mm;
+        }
+        html,
+        body {
+          background: #ffffff !important;
+          color: #0f172a !important;
+        }
+        header {
+          position: static !important;
+          border-bottom: none !important;
+          backdrop-filter: none !important;
+        }
+        .print-hidden {
+          display: none !important;
+        }
+        main {
+          gap: 2rem !important;
+        }
+        section {
+          break-inside: avoid-page;
+          padding-top: 1.5rem !important;
+        }
+        li,
+        h2,
+        h3 {
+          break-inside: avoid;
+        }
+        a {
+          text-decoration: none !important;
+        }
+      }
+    </style>
   </head>
   <body
     class="bg-page-bg-light font-sans antialiased text-slate-900 transition-colors duration-300 dark:bg-page-bg-dark dark:text-slate-100"
@@ -45,7 +80,7 @@
         <div class="text-base font-semibold uppercase tracking-[0.08em]">KKSHYU</div>
         <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
           <nav
-            class="flex flex-wrap gap-x-4 gap-y-2 text-[13px] uppercase tracking-[0.12em] text-slate-500 transition-colors dark:text-slate-400"
+            class="print-hidden flex flex-wrap gap-x-4 gap-y-2 text-[13px] uppercase tracking-[0.12em] text-slate-500 transition-colors dark:text-slate-400"
           >
             <a
               class="hover:text-slate-900 dark:hover:text-white"
@@ -109,7 +144,7 @@
             >
           </nav>
           <div
-            class="flex items-center gap-3"
+            class="print-hidden flex items-center gap-3"
             role="group"
             aria-label="Toggles"
           >
@@ -156,10 +191,24 @@
                 >🇺🇸</span
               >
               <span
+                data-lang-icon="ja"
+                aria-hidden="true"
+                class="hidden"
+                >🇯🇵</span
+              >
+              <span
                 class="sr-only"
                 data-i18n="lang.toggle"
-                >切換中英文</span
+                >切換語言</span
               >
+            </button>
+            <button
+              class="toggle-button inline-flex items-center gap-2 rounded-full border border-slate-300/70 bg-white/80 px-3 py-1 text-[13px] font-medium uppercase tracking-[0.12em] text-slate-700 transition hover:border-slate-400 hover:text-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-500 dark:border-white/20 dark:bg-white/10 dark:text-slate-200 dark:hover:border-white/40 dark:hover:text-white"
+              type="button"
+              id="pdf-export"
+            >
+              <span aria-hidden="true">📄</span>
+              <span data-i18n="pdf.export">匯出 PDF</span>
             </button>
           </div>
         </div>
@@ -315,6 +364,33 @@
                     data-i18n="experience.item8.body"
                   >
                     從事數位遊牧、科技與新創顧問服務，以及政府專案輔導與補助申請等。
+                  </p>
+                </div>
+              </li>
+              <!-- 1.5 阿利恩 ALION 2025 -->
+              <li class="relative flex gap-4 pb-8 last:pb-0">
+                <span
+                  class="relative z-10 mt-1.5 flex h-4 w-4 shrink-0 rounded-full border-2 border-slate-400 bg-page-bg-light dark:border-slate-500 dark:bg-page-bg-dark"
+                  aria-hidden="true"
+                ></span>
+                <div class="min-w-0 flex-1 space-y-1">
+                  <div
+                    class="text-sm font-semibold text-slate-800 dark:text-slate-100"
+                    data-i18n="experience.item9.title"
+                  >
+                    阿利恩股份有限公司（ALION）/ 2025 年至今
+                  </div>
+                  <div
+                    class="text-xs uppercase tracking-[0.08em] text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item9.role"
+                  >
+                    技術顧問
+                  </div>
+                  <p
+                    class="text-sm text-slate-500 dark:text-slate-400"
+                    data-i18n="experience.item9.body"
+                  >
+                    參與台日跨國雲端系統與產品開發，協助團隊在架構設計與跨境協作上落地。
                   </p>
                 </div>
               </li>
@@ -1311,7 +1387,9 @@
           "theme.toggle": "切換深淺主題",
           "lang.zh": "中文",
           "lang.en": "EN",
-          "lang.toggle": "切換中英文",
+          "lang.ja": "日本語",
+          "lang.toggle": "切換語言",
+          "pdf.export": "匯出 PDF",
           "hero.subtitle": "技術顧問 ・ 產品教練 ・ 數位遊牧生態推動者",
           "hero.title": "徐愷 | KK",
           "hero.lead":
@@ -1379,6 +1457,10 @@
           "experience.item8.role": "負責人",
           "experience.item8.body":
             "從事數位遊牧、科技與新創顧問服務，以及政府專案輔導與補助申請等。",
+          "experience.item9.title": "阿利恩股份有限公司（ALION）/ 2025 年至今",
+          "experience.item9.role": "技術顧問",
+          "experience.item9.body":
+            "參與台日跨國雲端系統與產品開發，協助團隊在架構設計與跨境協作上落地。",
           "skills.title": "技能",
           "skills.item1.title": "雲端與系統架構",
           "skills.item1.sub": "AWS 認證解決方案架構師",
@@ -1548,7 +1630,9 @@
           "theme.toggle": "Toggle theme",
           "lang.zh": "中文",
           "lang.en": "EN",
-          "lang.toggle": "Toggle language",
+          "lang.ja": "日本語",
+          "lang.toggle": "Switch language",
+          "pdf.export": "Export PDF",
           "hero.subtitle": "Technical Advisor ・ Product Coach ・ Nomad Ecosystem Builder",
           "hero.title": "KAI HSU | KK",
           "hero.lead":
@@ -1616,6 +1700,10 @@
           "experience.item8.role": "Managing Director",
           "experience.item8.body":
             "Digital nomad, tech and startup consulting; government project mentoring and grant application support.",
+          "experience.item9.title": "ALION (Alion IT Co., Ltd.) / 2025 - Present",
+          "experience.item9.role": "Technical Advisor",
+          "experience.item9.body":
+            "Contribute to Taiwan–Japan cloud system and product development, supporting architecture design and cross-border collaboration.",
           "skills.title": "Skills",
           "skills.item1.title": "Cloud & System Architecture",
           "skills.item1.sub": "AWS Certified Solutions Architect – Associate",
@@ -1771,6 +1859,249 @@
           "contact.cta": "Get in Touch",
           "footer.copyright": '© <span id="year"></span> Kai Hsu (KK). All rights reserved.',
         },
+        ja: {
+          "nav.partnership": "協業について",
+          "nav.about": "私について",
+          "nav.experience": "経歴",
+          "nav.skills": "スキル",
+          "nav.expertise": "開発分野",
+          "nav.initiatives": "取り組み",
+          "nav.ecosystem": "エコシステム",
+          "nav.talks": "講演・コミュニティ",
+          "nav.projects": "プロジェクト",
+          "nav.contact": "お問い合わせ",
+          "theme.dark": "ダーク",
+          "theme.light": "ライト",
+          "theme.toggle": "テーマを切り替える",
+          "lang.zh": "中文",
+          "lang.en": "EN",
+          "lang.ja": "日本語",
+          "lang.toggle": "言語を切り替える",
+          "pdf.export": "PDF出力",
+          "hero.subtitle": "技術顧問 ・ プロダクトコーチ ・ デジタルノマド推進者",
+          "hero.title": "徐愷（シュー・カイ）| KK",
+          "hero.lead":
+            "インターンからエンジニア、VPoE、起業家、そしてエコシステムビルダーへ。<br/>私は「人材エコシステムづくり」に注力しています —— 育成・マッチング・場・システムのすべてにおいて。",
+          "hero.meta":
+            "現在、台湾デジタルノマド協会 理事長、適才科技 代表、言文字 代表、遊遊株式会社 代表などを務め、台湾のデジタルノマド、国際スタートアップ連携、技術コミュニティの長期的な構築に取り組んでいます。",
+          "hero.cooperation": "企業・行政・スタートアップの皆さまとの協業を歓迎します —— <a href=\"#partnership\" class=\"underline underline-offset-2 hover:no-underline\">協業の方法を見る</a>",
+          "hero.focus-label": "<strong>現在の関心：</strong>",
+          "hero.focus-body":
+            "エンジニアのキャリア伴走、プロダクト・技術チームのマネジメント顧問、<br/>そしてデジタルノマドエコシステム、国際スタートアップ、地方創生をつなぐ長期的な連携。",
+          "hero.tag.web": "Web・クラウドアーキテクチャ",
+          "hero.tag.startup": "スタートアップエコシステム",
+          "hero.tag.nomad": "デジタルノマド",
+          "hero.tag.community": "コミュニティ運営",
+          "hero.tag.sbl": "プロダクト開発",
+          "partnership.title": "協業について",
+          "partnership.subtitle": "企業・行政・スタートアップ・コミュニティの皆さまは、以下の形での協業、またはメールでのご相談が可能です。",
+          "partnership.card1.title": "技術・プロダクト顧問",
+          "partnership.card1.body": "アーキテクチャレビュー、技術選定、プロダクトロードマップ、チーム編成のアドバイスを通じて、スタートアップや企業のアイデアの実現とグローバル展開を支援します。",
+          "partnership.card2.title": "企業研修・ワークショップ",
+          "partnership.card2.body": "Web技術、クラウドアーキテクチャ、DevOps、リモートコラボレーション、開発プロセスなど、チームの状況に合わせた研修や戦略ワークショップを設計します。",
+          "partnership.card3.title": "デジタルノマド・スタートアップエコシステム",
+          "partnership.card3.body": "サミット、都市ノード、コリビング・共創、国際スタートアップマッチング、アジア都市連携など、行政・施設・企業とともにエコシステムを育てます。",
+          "partnership.card4.title": "講演・戦略セッション",
+          "partnership.card4.body": "講演、パネル、クローズドの戦略ワークショップを通じて、チーム・コミュニティ・都市の対話をより実践的で行動につながるものにします。",
+          "partnership.cta": "協業のご相談",
+          "about.title": "私について",
+          "about.p1":
+            "知識をわかりやすく伝えること、対話を通じてお互いの考えを磨き合うことが好きです。大学時代から家庭教師として10年以上の指導経験を積み、業界では技術顧問として、「技術に行き詰まっている人」に共感し、問題をほどいていくことを得意としています。",
+          "about.p2":
+            "大学3年の夏にインターンとして働き始め、その後エンジニアからVPoE、起業家へと歩んできました。不安な新人、焦るエンジニア、板挟みのマネージャーを自ら経験してきたからこそ、技術・プロダクト・組織・人の間で、より現実的なバランスを見つけることができます。",
+          "about.p3":
+            "近年は3つの領域に注力しています：<br/><strong>デジタルノマド × EdTech × 技術・シビックコミュニティ。</strong><br/>台湾と日本、韓国、東南アジアを行き来しながら、ノマドワーカー、地方創生、開発者コミュニティ、公共セクターを長期的な協力ネットワークとしてつないでいます。",
+          "about.p4": "人材に関わる産業に興味のある方、ぜひコーヒーでも飲みながらお話ししましょう。",
+          "experience.title": "経歴",
+          "experience.item1.title": "台湾デジタルノマド協会 / 2024年〜現在",
+          "experience.item1.role": "理事長",
+          "experience.item1.body":
+            "行政、企業、コミュニティ、キャンパスのリソースを結び、台湾のデジタルノマドエコシステムを構築。",
+          "experience.item2.title": "適才科技股份有限公司 / 2020年〜現在",
+          "experience.item2.role": "代表",
+          "experience.item2.body":
+            "人材と技術の「適材適所」に焦点を当て、受託・コンサルティング・教育を組み合わせ、柔軟で国際協働できる技術チームづくりを支援。",
+          "experience.item3.title": "匠說有限公司 / 2018年〜現在",
+          "experience.item3.role": "CTO・共同創業者",
+          "experience.item3.body":
+            "プロダクト・技術チームを率いて、オンライン教育・コンテンツプロダクトを0から1へ磨き上げ、フロントエンド・バックエンド・クラウドを統合した持続可能な学習システムを設計。",
+          "experience.item4.title": "米Mobagel Inc. / 2014年 - 2018年",
+          "experience.item4.role": "VP of Engineering",
+          "experience.item4.body":
+            "エンジニアからVPoEへ。プロダクトの急成長、技術的負債の管理、セキュリティ、部門間コミュニケーションを実際に経験し、スタートアップの「成長と安定」の間の葛藤を理解。",
+          "experience.item5.title": "適所資本 / 2025年〜現在",
+          "experience.item5.role": "技術・プロダクト・リモートチーム顧問",
+          "experience.item5.body":
+            "複数のアクセラレーターやチームに参画し、アーキテクチャ、プロダクトロードマップ、チーム編成まで、起業家が実現可能な形でアイデアを国際市場へ届けることを支援。",
+          "experience.item6.title": "国家発展委員会デジタルノマドオフィス / 2025年1月〜現在",
+          "experience.item6.role": "CEO",
+          "experience.item6.body":
+            "台湾のデジタルノマド政策、エコシステム、国際関係を推進。",
+          "experience.item7.title": "言文字股份有限公司 / 2023年11月〜現在",
+          "experience.item7.role": "代表",
+          "experience.item7.body":
+            "デジタルノマド、コーヒー・カクテル、シェアスペース、テック・スタートアップコミュニティを融合した複合型スペース。",
+          "experience.item8.title": "遊遊股份有限公司 / 2025年5月〜現在",
+          "experience.item8.role": "代表",
+          "experience.item8.body":
+            "デジタルノマド、テック・スタートアップのコンサルティング、行政プロジェクトの伴走支援や補助金申請サポートなどを提供。",
+          "experience.item9.title": "阿利恩股份有限公司（ALION）/ 2025年〜現在",
+          "experience.item9.role": "技術顧問",
+          "experience.item9.body":
+            "台湾と日本をつなぐクラウドシステム・プロダクト開発に参画し、アーキテクチャ設計と越境コラボレーションの実現を支援。",
+          "skills.title": "スキル",
+          "skills.item1.title": "クラウド・システムアーキテクチャ",
+          "skills.item1.sub": "AWS認定ソリューションアーキテクト",
+          "skills.item1.body":
+            "スケーラブルで運用可能なクラウドアーキテクチャを設計。MVPから成長期システムまで、コストと信頼性のバランスを取りながら、スタートアップのスピードと長期的な技術的健全性を両立。",
+          "skills.item2.title": "Web開発",
+          "skills.item2.sub": "React / Node.js / Python / PHP",
+          "skills.item2.body":
+            "フロントエンド・バックエンドの多様なアーキテクチャに精通。開発体験と長期的な保守性を重視し、技術選定・リファクタリング・モジュール化の意思決定を支援。",
+          "skills.item3.title": "プロダクト・チームリーダーシップ",
+          "skills.item3.sub": "プロダクト開発・技術チームマネジメント",
+          "skills.item3.body":
+            "クロスファンクショナルなチームを率いて、要件整理、優先順位付け、デリバリー、イテレーションまで、「やりたいこと」と「できること」を揃える手助けをします。",
+          "skills.item4.title": "教育・メンタリング・コミュニティ",
+          "skills.item4.sub": "企業研修講師・コミュニティコントリビューター",
+          "skills.item4.body":
+            "8年以上の教育・共有経験。オープンソースや技術コミュニティに長期的に参加し、実践を核とした学習パスやコミュニティ活動の設計を得意とします。",
+          "expertise.title": "開発分野",
+          "expertise.intro":
+            "ビッグデータの基盤アーキテクチャからモダンWebフルスタック開発への転換を経験しただけでなく、DevOpsクラウドデプロイや近年の生成AI活用でも深い実践経験を積んできました。開発経験を4つのコア領域にまとめます：",
+          "expertise.backend.title": "I. バックエンド開発・APIアーキテクチャ",
+          "expertise.backend.item1":
+            "<strong>Node.js & TypeScriptエコシステム</strong>：Node.js環境に精通。初期はExpress、後期はNestJSフレームワークを使いこなし、モジュール化された大規模バックエンドサービスを構築。",
+          "expertise.backend.item2":
+            "<strong>Python開発・フレームワーク</strong>：FlaskやDjangoでのPython Web API構築経験を持ち、FastAPIで非同期・高パフォーマンスなサービスを開発。",
+          "expertise.backend.item3":
+            "<strong>GraphQL・Hasura</strong>：GraphQLをヘビーに活用。Apollo Server/Clientに精通し、HasuraをGraphQLエンジンとして、hasura migrate applyとhasura metadataによるデータベースのバージョン管理と権限管理を自動化。",
+          "expertise.backend.item4":
+            "<strong>サーバーレスアーキテクチャ</strong>：Serverless FrameworkでAWS Lambdaを多用し、決済連携、注文通知、動画アップロード、非同期スケジュールタスクを処理。",
+          "expertise.backend.item5":
+            "<strong>データベース・キャッシュ</strong>：PostgreSQLとMySQLの運用・マイグレーションに精通。RedisとBull MQでタスクキューを構築。",
+          "expertise.frontend.title": "II. フロントエンドエンジニアリング",
+          "expertise.frontend.item1":
+            "<strong>モダンフロントエンドフレームワーク</strong>：Reactエコシステムを深耕。Create React AppからNext.jsへ全面移行し、SSR・SSG開発を実践。",
+          "expertise.frontend.item2":
+            "<strong>状態管理</strong>：Redux、Rematch、Recoil、ステートマシンXStateの使用経験。",
+          "expertise.frontend.item3":
+            "<strong>UI/UX・スタイリング</strong>：Tailwind CSS、Chakra UI、Ant Design、Styled-componentsに精通。",
+          "expertise.frontend.item4":
+            "<strong>マイクロフロントエンド・共有コンポーネント</strong>：Bitを導入し、プロジェクト横断のReact共有UIコンポーネントを管理。社内デザインシステムを構築。",
+          "expertise.devops.title": "III. DevOps・クラウド・インフラ",
+          "expertise.devops.item1":
+            "<strong>AWSクラウドアーキテクチャ</strong>：EC2の運用、S3静的リソース同期、Elastic Beanstalkデプロイ、CloudFront CDN管理、Cognito認証、ECSコンテナサービスの運用経験。",
+          "expertise.devops.item2":
+            "<strong>GCP・Firebase</strong>：Firebase Functions、Hosting、Firestoreを使いこなし、対応するCI/CDデプロイフローを構築。",
+          "expertise.devops.item3":
+            "<strong>コンテナ化・オーケストレーション</strong>：DockerとDocker Composeでローカル開発・サービス構築。Kubernetesの基礎的な実務経験。",
+          "expertise.devops.item4":
+            "<strong>Infrastructure as Code</strong>：Terraformの運用経験があり、インフラ構成をコード化。",
+          "expertise.dataai.title": "IV. データエンジニアリング・AI統合",
+          "expertise.dataai.item1":
+            "<strong>ビッグデータ・分散処理</strong>（初期経験）：Hadoopエコシステムの構築、Sparkクラスター運用、H2O Sparkling Waterによる機械学習モデルの訓練という基盤レベルの経験。",
+          "expertise.dataai.item2":
+            "<strong>LLM・生成AI</strong>：主要LLM APIの統合開発経験を持ち、最新のAIトレンドを追い続けています。",
+          "expertise.dataai.item3":
+            "<strong>AIアプリケーション開発</strong>：主要なLLMアプリケーションフレームワークとベクトルデータベースを活用し、高度なAIアプリ（PDF文書QA、チャットボットなど）を構築。",
+          "expertise.dataai.item4":
+            "<strong>AI支援開発</strong>：次世代のAI開発支援ツールを日常のワークフローに導入済み。",
+          "expertise.career.title": "キャリアの軌跡",
+          "expertise.career.body":
+            "私のキャリアは<strong>データサイエンス・ビッグデータエンジニアリング</strong>から始まり、その後<strong>フルスタックプラットフォーム開発・アーキテクチャ設計</strong>（複雑なオンライン教育・決済システムの構築）へと深化し、Web3／ブロックチェーンメディアのシステム保守にも携わりました。近年は<strong>AI SaaSと自動化ワークフロー</strong>へと領域を広げています。",
+          "initiatives.title": "現在の取り組み",
+          "initiatives.intro":
+            "いま私は、いくつかのことに時間を注いでいます：<br/><strong>個人</strong>がより自由なプロフェッショナルになること、<strong>チーム</strong>がより健全に成長すること、<strong>都市や地域</strong>にそうした人々による新しい物語が生まれること。",
+          "initiatives.item1.title": "Nomad Taiwan & TDNAエコシステム推進",
+          "initiatives.item1.body":
+            "国家発展委員会や地方自治体と連携し、Taiwan Digital Nomad Associationを通じてサミット、ワークショップ、実験プロジェクトを開催。「次のデジタルノマドの目的地としての台湾」の可能性を世界に発信。",
+          "initiatives.item2.title": "アジア都市連携・国際スタートアップ協業",
+          "initiatives.item2.body":
+            "日本（大阪・福岡など）、韓国、タイ、フィリピンのコミュニティと都市をつなぎ、Expoサミット、Nomad Summit、都市視察、スタートアップマッチングなどを共同企画し、長期的な協力ネットワークを構築。",
+          "initiatives.item3.title": "スタジオ型学習・リモートワーク教育",
+          "initiatives.item3.body":
+            "オンライン講座、プロジェクト型スタジオ、国際受託を組み合わせたスタジオ型学習モデルを展開。スキル習得にとどまらず、デジタルワークで世界中どこでも生きられる人を育てます。",
+          "initiatives.item4.title": "ノマド × 地方創生・共創プロジェクト",
+          "initiatives.item4.body":
+            "台南・台東・花蓮などでノマド体験週間、コリビング共創プログラム、地域イベントを推進。ノマドワーカーと地元の若者・事業者・行政がともに新しい協業モデルを試みています。",
+          "ecosystem.title": "エコシステム・スタートアップ",
+          "ecosystem.item1.title": "デジタルノマドエコシステム",
+          "ecosystem.item1.body":
+            "台湾のデジタルノマドビザや関連制度、エコシステムサイト、国際プロモーションの設計に参画。各国のノマド組織と連携し、都市を越えた長期交流プログラムを企画。",
+          "ecosystem.item2.title": "コリビング・共創スペース・都市ノード",
+          "ecosystem.item2.body":
+            "カフェ、共創スペース、コリビングプログラムをノードとして、「Nomad Taiwan」都市ネットワークを少しずつ構築。リモートワーカーと地元の起業家が自然に出会える場をつくります。",
+          "ecosystem.item3.title": "スタートアップと行政の架け橋",
+          "ecosystem.item3.body":
+            "行政がスタートアップやデジタルノマドのエコシステムを理解できるよう支援し、公共政策の言葉を起業家に伝わる協業機会へと翻訳。現場の声を政策決定の場へ届けます。",
+          "ecosystem.item4.title": "技術コミュニティ・シビックテック",
+          "ecosystem.item4.body":
+            "Python、Web、シビックテックのコミュニティに長期参加し、オープンソースイベントを共催・支援。技術は公共インフラであり、コミュニティの共通言語だと信じています。",
+          "ecosystem.p1":
+            "私にとって「エコシステム」はスローガンではなく、長期的に協力し合う人と場の集まりです：開発者、起業家、都市で働く人、公務員、ノマドワーカー、学生。それぞれ異なる役割と制約を持ちながらも、共に期待しているのは——<strong>個人の自由を、都市や地域の糧に変えていくこと。</strong>",
+          "ecosystem.p2":
+            "同じようなエコシステム、アクセラレーター、国際交流、地域実験を企画している方は、ぜひ一緒に分解し、共同設計しましょう。",
+          "talks.title": "講演・コミュニティ",
+          "talks.item1.title": "カンファレンス・技術講演",
+          "talks.item1.body":
+            "F2E & RGBA：フロントエンド開発の心得と実践事例<br/>Modern Web：Reactマルチテナントアーキテクチャと大規模フロントエンド設計<br/>PyCon JP / PL / TW：手相認識からスケーラブルな機械学習システム、面接システム、開発プロセス設計まで。<br/>",
+          "talks.item2.title": "企業研修・社内共有",
+          "talks.item2.body":
+            "中華電信、資策会（III）などで研修講師を担当。Web技術、クラウドアーキテクチャ、DevOps、チーム開発プロセス、リモートコラボレーションの実務をカバー。",
+          "talks.item3.title": "コミュニティ・エコシステムでの役割",
+          "talks.item3.body":
+            "多くの技術コミュニティやデジタルノマドコミュニティに参加・支援。<br/>イベント設計、アジェンダ企画から国際スピーカーの連携まで、コミュニティを単発のイベントではなく、動き続けるネットワークに育てます。",
+          "talks.item4.title": "ハッカソン・受賞歴",
+          "talks.item4.body":
+            "Microsoft GCR Startup Hackfest 優勝、Salesforce 100万ドルHackathon世界6位など、NTUやAlibabaなどのハッカソンで多数受賞。短期間でアイデアをデモ可能な形にすることを得意としています。",
+          "talks.p1":
+            "良い共有とは「一方的な発信」ではなく、問題と状況を一緒に明確にし、次に試せる小さな実験を見つけることだと信じています。この精神を、参加するすべてのコミュニティ・エコシステム活動に込めています。",
+          "talks.p2":
+            "企業研修、講演、パネルディスカッション、クローズドの戦略ワークショップまで、チーム・コミュニティ・都市の対話をより実践に近づけたい方は、ぜひ現状に合った交流の場を一緒に設計しましょう。",
+          "projects.title": "主なプロジェクト",
+          "projects.item1.title": "食品安全ブロックチェーン追跡システム",
+          "projects.item1.meta": "ブロックチェーン・Web・Python",
+          "projects.item1.body":
+            "ブロックチェーン技術で食品サプライチェーンを追跡し、情報の改ざんを防止。食の安全に対する消費者の信頼を高めます。",
+          "projects.item2.title": "手相認識システム",
+          "projects.item2.meta": "機械学習・コンピュータービジョン",
+          "projects.item2.body":
+            "コンピュータービジョンと機械学習を組み合わせ、手のひらの紋様から特徴を分析。ヒューマンコンピュータインタラクションの新たな可能性を探求。",
+          "projects.item3.title": "オンライン面接システム",
+          "projects.item3.meta": "Docker・Python・DevOps",
+          "projects.item3.body":
+            "候補者のコーディングテストと環境構築を自動化し、大量の技術面接を管理された公平な環境で実施可能に。",
+          "projects.item4.title": "自動機械学習システム",
+          "projects.item4.meta": "AWS・Azure・Python / Scala",
+          "projects.item4.body":
+            "データ処理からモデル訓練、デプロイまでの一気通貫パイプラインを構築し、チームが機械学習を導入するハードルを低減。",
+          "projects.item5.title": "交通違反通報システム",
+          "projects.item5.meta": "Node.js・Webアプリ",
+          "projects.item5.body": "クラウドサービスとフロントエンドを統合し、市民の通報とデータ処理のフローを最適化。",
+          "projects.item6.title": "自動作曲ジェネレーター",
+          "projects.item6.meta": "アルゴリズム・C",
+          "projects.item6.body": "アルゴリズムでメロディを自動生成し、「人間の好み」と機械生成コンテンツのバランスを実験。",
+          "projects.item7.title": "Nomad Taiwan & 都市ノードプロジェクト",
+          "projects.item7.meta": "エコシステム・政策・コミュニティデザイン",
+          "projects.item7.body":
+            "行政や地域パートナーと連携し、台湾デジタルノマド都市ネットワークを構築。コリビング、ワークスペース、地域コミュニティをつなぎ、長期滞在・実験プログラムを設計。",
+          "projects.item8.title": "Nomad Explore & コリビングプログラム",
+          "projects.item8.meta": "プログラム設計・地方創生",
+          "projects.item8.body":
+            "台南・台東・花蓮などでコリビング共創イベントを企画。リモートワーカーが地元の若者・店舗・行政とともに地方創生を実践。",
+          "projects.item9.title": "国際 Nomad & Startup Summit",
+          "projects.item9.meta": "サミット・国際連携",
+          "projects.item9.body":
+            "アジアのデジタルノマド・スタートアップ交流イベントを多数主催・共催。各国の都市、団体、コミュニティをつなぎ、働き方と都市の未来を共に議論。",
+          "contact.title": "お問い合わせ",
+          "contact.body":
+            "こんなことを考えていませんか：<br/>技術チームをより安定して成長させるには？エンジニアや起業家の学習・伴走の道筋をどう設計するか？<br/>あるいはデジタルノマド、スタートアップ、地方創生を結びつけ、都市と人材の双方に実りをもたらしたい方、ぜひお話ししましょう。",
+          "contact.enterprise-cta": "企業との協業、顧問のご依頼、講演・研修のご相談は、メールにてお気軽にどうぞ。",
+          "contact.email-label": "メールアドレス",
+          "contact.cta": "メールを送る",
+          "footer.copyright": '© <span id="year"></span> Kai Hsu (KK). All rights reserved.',
+        },
       };
 
       const applyYear = () => {
@@ -1790,9 +2121,13 @@
             el.innerHTML = value;
           }
         });
-        document.documentElement.lang = lang === "en" ? "en" : "zh-Hant";
+        document.documentElement.lang = lang === "en" ? "en" : lang === "ja" ? "ja" : "zh-Hant";
         applyYear();
       };
+
+      const LANGUAGE_ORDER = ["zh", "en", "ja"];
+      const nextLanguage = (lang) =>
+        LANGUAGE_ORDER[(LANGUAGE_ORDER.indexOf(lang) + 1) % LANGUAGE_ORDER.length];
 
       document.addEventListener("DOMContentLoaded", () => {
         const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
@@ -1815,11 +2150,10 @@
 
         const updateLanguageUI = (lang) => {
           if (!langToggleButton) return;
-          const isEnglish = lang === "en";
           langToggleButton.dataset.langState = lang;
-          langToggleButton.setAttribute("aria-pressed", String(isEnglish));
+          langToggleButton.setAttribute("aria-pressed", String(lang !== "zh"));
           // 顯示「可切換到的語系」icon（點擊後會切換到該語系）
-          const showIcon = lang === "en" ? "zh" : "en";
+          const showIcon = nextLanguage(lang);
           langToggleButton.querySelectorAll("[data-lang-icon]").forEach((icon) => {
             icon.classList.toggle("hidden", icon.dataset.langIcon !== showIcon);
           });
@@ -1836,7 +2170,7 @@
         };
 
         const setLanguage = (lang, persist = true) => {
-          const normalized = lang === "en" ? "en" : "zh";
+          const normalized = LANGUAGE_ORDER.includes(lang) ? lang : "zh";
           document.body.dataset.lang = normalized;
           applyTranslations(normalized);
           updateLanguageUI(normalized);
@@ -1863,9 +2197,39 @@
 
         if (langToggleButton) {
           langToggleButton.addEventListener("click", () => {
-            const current = langToggleButton.dataset.langState === "en" ? "en" : "zh";
-            const next = current === "zh" ? "en" : "zh";
-            setLanguage(next);
+            const current = LANGUAGE_ORDER.includes(langToggleButton.dataset.langState)
+              ? langToggleButton.dataset.langState
+              : "zh";
+            setLanguage(nextLanguage(current));
+          });
+        }
+
+        // 一鍵匯出 PDF：以列印樣式輸出簡歷（列印時強制淺色主題）
+        const pdfExportButton = document.getElementById("pdf-export");
+        const originalTitle = document.title;
+        let darkBeforePrint = false;
+
+        window.addEventListener("beforeprint", () => {
+          darkBeforePrint = root.classList.contains("dark");
+          if (darkBeforePrint) root.classList.remove("dark");
+        });
+        window.addEventListener("afterprint", () => {
+          if (darkBeforePrint) root.classList.add("dark");
+          document.title = originalTitle;
+        });
+
+        if (pdfExportButton) {
+          pdfExportButton.addEventListener("click", () => {
+            const lang = LANGUAGE_ORDER.includes(document.body.dataset.lang)
+              ? document.body.dataset.lang
+              : "zh";
+            const fileNames = {
+              zh: "徐愷 KK 簡歷",
+              en: "Kai Hsu KK Resume",
+              ja: "徐愷 KK 履歴書",
+            };
+            document.title = fileNames[lang];
+            window.print();
           });
         }
 
